@@ -20,7 +20,7 @@
     @include('includes.frontend.navbar')
     @yield('content')
 
-    @include('includes.frontend.style')
+    @include('includes.frontend.script')
 </body>
 
 </html>

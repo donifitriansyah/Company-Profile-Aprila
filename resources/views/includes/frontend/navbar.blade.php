@@ -3,7 +3,7 @@
             <div class="row">
                 <div class="col-20 align-self-center">
                     <div class="site-logo">
-                        <a href="index.html"><img src="assets/img/logo.png" alt=""></a>
+                        <a href="index.html"><img src="{{ asset('frontend/assets/img/logo-aprila.png') }}" alt=""></a>
                     </div>
                 </div><!--- END Col -->
 

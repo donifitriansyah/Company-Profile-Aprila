@@ -460,10 +460,26 @@ top: 40px;
 * 03.START HOME DESIGN
 * ----------------------------------------------------------------------------------------
 */
-.home_bg {
-	height: 660px;
-	position:relative;
+.carousel-item {
+    height: 850px;
 }
+
+@media (max-width: 960px) {
+    .carousel-item {
+        height: 650px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        height: auto;
+        padding: 80px 0;
+    }
+}
+/* .home_bg {
+	height: 850px;
+	position:relative;
+} */
 @media only screen and (max-width:960px){
 .home_bg {height:650px;}
 }
@@ -478,7 +494,7 @@ top: 40px;
 	font-weight: 700;
 	letter-spacing: 0;
 	line-height: 74px;
-	padding-top: 100px;
+	padding-top: 250px;
 	margin-bottom: 20px;
 }
 @media only screen and (max-width:960px){

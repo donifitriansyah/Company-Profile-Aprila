@@ -3,36 +3,163 @@
     <section class="home_bg hb_height"
         style="background-image: url('{{ asset('frontend/assets/img/bg/home-bg.jpg') }}');
            background-size: cover;
-           background-position: center center;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-sm-12 col-xs-12">
-                    <div class="hero-text ht_top">
-                        <h1><span>Smart Study</span> Where Knowledge Meets the Web</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, consectetur adipiscing elit tempor
-                            ut labore</p>
-                    </div>
-                    <div class="home_sb">
-                        <form action="#" class="banner_subs">
-                            <input type="text" class="form-control home_si" placeholder="Search your course here"
-                                required="required">
-                            <button type="button" class="subscribe__btn">Search <i
-                                    class="fa fa-paper-plane-o"></i></button>
-                        </form>
-                    </div>
-                </div><!--- END COL -->
-                <div class="col-lg-6 col-sm-12 col-xs-12">
-                    <div class="hero-text-img">
-                        <img src="assets/img/dashboard-img2.png" class="img-fluid" alt="" />
-                        <div class="home_ps">
-                            <span class="ti-user"></span>
-                            <h2>4500+</h2>
-                            <p>Active student</p>
+           background-position: center;
+           background-repeat: no-repeat;">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+
+                <!-- SLIDE 1 -->
+                <div class="carousel-item active">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="hero-text ht_top">
+                                    <h1>APRILA INDONESIA</h1>
+                                    <h2>Terampil | Mandiri | Kompeten</h2>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="hero-text-img">
+                                    <img src="{{ asset('frontend/assets/img/hero-2.png') }}" class="img-fluid">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div><!--- END COL -->
-            </div><!--- END ROW -->
-        </div><!--- END CONTAINER -->
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="hero-text ht_top">
+                                    <h1>Lembaga Pendidikan Non Formal & Informal PKBM Aprila</h1>
+                                    <p>Kursus Offline dan Online bersertifikasi terbaik dengan layanan luas dari lembaga
+                                        kursus resmi</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="hero-text-img">
+                                    <img src="{{ asset('frontend/assets/img/carousellp.png') }}" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 2 -->
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="hero-text ht_top">
+                                    <h1>Sekolah Paket A, B, dan C</h1>
+                                    <p>Platform pembelajaran digital dengan sistem ujian modern dan materi lengkap</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="hero-text-img">
+                                    <img src="{{ asset('frontend/assets/img/carousel-abc.png') }}" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="hero-text ht_top">
+                                    <h1>Kewirausahaan</h1>
+                                    <p>Program Kewirausahaan membantu peserta membangun pola pikir mandiri,
+                                        kreatif, dan inovatif dalam menciptakan peluang usaha. Kami membimbing dari dasar
+                                        hingga praktik nyata agar setiap peserta mampu mengembangkan usaha yang
+                                        berkelanjutan.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="hero-text-img">
+                                    <img src="{{ asset('frontend/assets/img/kwu.png') }}" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="hero-text ht_top">
+                                    <h1>Kursus Komputer</h1>
+                                    <p>Kursus Komputer dirancang untuk meningkatkan literasi
+                                        digital dan keterampilan teknologi. Peserta akan dibekali kemampuan praktis yang
+                                        dibutuhkan di era digital, mulai dari dasar hingga tingkat lanjutan.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="hero-text-img">
+                                    <img src="{{ asset('frontend/assets/img/hero-3.png') }}" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="hero-text ht_top">
+                                    <h1>Production House</h1>
+                                    <p>Production House (PH) PKBM Aprila memproduksi konten kreatif berupa video, desain,
+                                        dan media digital untuk kebutuhan anda.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="hero-text-img">
+                                    <img src="{{ asset('frontend/assets/img/hero-3.png') }}" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="hero-text ht_top">
+                                    <h1>Klinik Bisnis</h1>
+                                    <p>Klinik Bisnis Aprila memberikan pendampingan bagi calon pelaku usaha dalam
+                                        mengembangkan ide bisnis menjadi usaha nyata. Kami membantu dari perencanaan,
+                                        strategi, hingga pengembangan usaha agar lebih siap bersaing di dunia industri.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="hero-text-img">
+                                    <img src="{{ asset('frontend/assets/img/hero-3.png') }}" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- OPTIONAL NAV -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+        </div>
     </section>
     <!-- END  HOME -->
 
