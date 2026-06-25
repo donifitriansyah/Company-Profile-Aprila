@@ -1,84 +1,87 @@
 <div id="navigation" class="navbar-light bg-faded site-navigation">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-20 align-self-center">
-                    <div class="site-logo">
-                        <a href="index.html"><img src="{{ asset('frontend/assets/img/logo-aprila.png') }}" alt=""></a>
-                    </div>
-                </div><!--- END Col -->
+    <div class="container-fluid">
+        <div class="row align-items-center">
 
-                <div class="col-60 d-flex">
-                    <nav id="main-menu">
-                        <ul>
-                            <li class="menu-item-has-children"><a href="#">Home</a>
-                                <ul>
-                                    <li><a href="index.html">Home 01</a></li>
-                                    <li><a href="index2.html">Home 02</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="about.html">About</a></li>
-                            <li class="menu-item-has-children"><a href="course.html">Course</a>
-                                <ul>
-                                    <li><a href="course.html">Course</a></li>
-                                    <li><a href="course_details.html">Course Details</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children"><a href="#">Pages</a>
-                                <ul>
-                                    <li><a href="instructor.html">Instructor</a></li>
-                                    <li><a href="ins_details.html">Instructor Details</a></li>
-                                    <li><a href="pricing.html">Pricing Plan</a></li>
-                                    <li><a href="faq.html">Faq Page</a></li>
-                                    <li><a href="404.html">404</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children"><a href="blog.html">Blog</a>
-                                <ul>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog_single.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div><!--- END Col -->
+            <!-- Logo -->
+            <div class="col-auto">
+                <div class="site-logo">
+                    <a href="index.html">
+                        <img src="{{ asset('frontend/assets/img/logo-aprila.png') }}" alt="Aprila Indonesia">
+                    </a>
+                </div>
+            </div>
 
-                <div class="col-20 d-none d-xl-block text-end align-self-center">
-                    <a href="#" class="header-btn">Sign In</a>
-                    <a href="contact.html" class="btn_one">Sign Up</a>
-                </div><!--- END Col -->
+            <!-- Main Menu - Desktop -->
+            <div class="col d-none d-xl-block">
+                <nav id="main-menu" class="ms-auto">
+                    <ul class="d-flex justify-content-end align-items-center gap-4 mb-0">
+                        <li class="menu-item"><a href="#">Beranda</a></li>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li class="menu-item-has-children">
+                            <a href="course.html">Layanan</a>
+                            <ul>
+                                <li><a href="course_details.html">PKBM</a></li>
+                                <li><a href="course.html">Lembaga Kursus dan Pelatihan</a></li>
+                                <li><a href="course.html">Lembaga Pelatihan Kerja</a></li>
+                                <li><a href="course_details.html">Klinik Bisnis</a></li>
+                                <li><a href="course_details.html">Production House</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Pages</a>
+                            <ul>
+                                <li><a href="instructor.html">Instructor</a></li>
+                                <li><a href="ins_details.html">Instructor Details</a></li>
+                                <li><a href="pricing.html">Pricing Plan</a></li>
+                                <li><a href="faq.html">Faq Page</a></li>
+                                <li><a href="404.html">404</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="blog.html">Berita</a>
+                            <ul>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="blog_single.html">Blog Details</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
 
-                <ul class="mobile_menu">
-                    <li><a href="#">Home</a>
-                        <ul class="sub-menu">
-                            <li><a href="index.html">Home 01</a></li>
-                            <li><a href="index2.html">Home 02</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="#">Course</a>
-                        <ul class="sub-menu">
-                            <li><a href="course.html">Course</a></li>
-                            <li><a href="course_details.html">Course Deails</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Pages</a>
-                        <ul class="sub-menu">
-                            <li><a href="instructor.html">Instructor</a></li>
-                            <li><a href="ins_details.html">Instructor Details</a></li>
-                            <li><a href="pricing.html">Pricing Plan</a></li>
-                            <li><a href="faq.html">Faq Page</a></li>
-                            <li><a href="404.html">404</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="blog.html">Blog</a>
-                        <ul class="sub-menu">
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="blog_single.html">Blog Details</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div><!--- END ROW -->
-        </div><!--- END CONTAINER -->
+            <!-- Mobile Menu -->
+            <ul class="mobile_menu d-xl-none">
+                <li><a href="#">Home</a>
+                    <ul class="sub-menu">
+                        <li><a href="index.html">Home 01</a></li>
+                        <li><a href="index2.html">Home 02</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Course</a>
+                    <ul class="sub-menu">
+                        <li><a href="course.html">Course</a></li>
+                        <li><a href="course_details.html">Course Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Pages</a>
+                    <ul class="sub-menu">
+                        <li><a href="instructor.html">Instructor</a></li>
+                        <li><a href="ins_details.html">Instructor Details</a></li>
+                        <li><a href="pricing.html">Pricing Plan</a></li>
+                        <li><a href="faq.html">Faq Page</a></li>
+                        <li><a href="404.html">404</a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html">Berita</a>
+                    <ul class="sub-menu">
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="blog_single.html">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </div>
     </div>
+</div>

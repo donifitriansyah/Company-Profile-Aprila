@@ -19,6 +19,7 @@
 
     @include('includes.frontend.navbar')
     @yield('content')
+    @include('includes.frontend.footer')
 
     @include('includes.frontend.script')
 </body>
