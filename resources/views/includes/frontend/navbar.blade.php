@@ -15,36 +15,29 @@
             <div class="col d-none d-xl-block">
                 <nav id="main-menu" class="ms-auto">
                     <ul class="d-flex justify-content-end align-items-center gap-4 mb-0">
-                        <li class="menu-item"><a href="#">Beranda</a></li>
-                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li class="menu-item"><a href="{{ route('welcome') }}">Beranda</a></li>
+                        <li><a href="{{ route('tentang-kami') }}">Tentang Kami</a></li>
                         <li class="menu-item-has-children">
-                            <a href="course.html">Layanan</a>
+                            <a>Layanan</a>
                             <ul>
-                                <li><a href="course_details.html">PKBM</a></li>
-                                <li><a href="course.html">Lembaga Kursus dan Pelatihan</a></li>
-                                <li><a href="course.html">Lembaga Pelatihan Kerja</a></li>
-                                <li><a href="course_details.html">Klinik Bisnis</a></li>
-                                <li><a href="course_details.html">Production House</a></li>
+                                <li><a href="{{ route('pkbm-aprila') }}">PKBM</a></li>
+                                {{-- <li><a href="course.html">Lembaga Kursus dan Pelatihan</a></li>
+                                <li><a href="course.html">Lembaga Pelatihan Kerja</a></li> --}}
+                                <li><a href="https://klinikbisnis.aprila.id/">Klinik Bisnis</a></li>
+                                {{-- <li><a href="course_details.html">Production House</a></li> --}}
+                                <li><a href="{{ route('kelas-kursus-dan-jasa') }}">Kelas Kursus dan Jasa</a></li>
                             </ul>
                         </li>
+
                         <li class="menu-item-has-children">
-                            <a href="#">Pages</a>
+                            <a>Berita</a>
                             <ul>
-                                <li><a href="instructor.html">Instructor</a></li>
-                                <li><a href="ins_details.html">Instructor Details</a></li>
-                                <li><a href="pricing.html">Pricing Plan</a></li>
-                                <li><a href="faq.html">Faq Page</a></li>
-                                <li><a href="404.html">404</a></li>
+                                <li><a href="{{ route('berita') }}">Berita</a></li>
+                                <li><a href="blog_single.html">Galeri</a></li>
                             </ul>
                         </li>
-                        <li class="menu-item-has-children">
-                            <a href="blog.html">Berita</a>
-                            <ul>
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="blog_single.html">Blog Details</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="{{ route('kontak-kami') }}">Kontak</a></li>
+                        <li><a href="https://lms.aprila.id/login/index.php">LMS</a></li>
                     </ul>
                 </nav>
             </div>

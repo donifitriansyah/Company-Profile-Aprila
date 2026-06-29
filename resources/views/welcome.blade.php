@@ -1,4 +1,7 @@
 @extends('layouts.frontend')
+@section('title')
+    Beranda
+@endsection
 @section('content')
     <section class="home_bg hb_height"
         style="background-image: url('{{ asset('frontend/assets/img/bg-2.png') }}');
@@ -231,8 +234,7 @@
                             <li><span class="ti-check"></span> Mendukung terwujudnya masyarakat yang mandiri dan produktif
                             </li>
                         </ul>
-                        <a class="btn_one" href="{{ url('/tentang-kami') }}">Selengkapnya <i
-                                class="ti-arrow-top-right"></i></a>
+
                     </div>
                 </div>
             </div>
@@ -325,9 +327,7 @@
                             peserta mengembangkan kemampuan, kepercayaan diri, dan kemandirian untuk masa depan yang lebih
                             baik.
                         </p>
-                        <a class="btn_one" href="{{ url('/tentang-kami') }}">
-                            Pelajari Lebih Lanjut <i class="ti-arrow-top-right"></i>
-                        </a>
+
                     </div>
                 </div>
 
@@ -682,9 +682,7 @@
     <section class="team_area section-padding">
         <div class="container">
             <div class="section-title text-center">
-                <h2>Meet our Instructors</h2>
-                <p>We offer a brand new approach to the most basic learning paradigms. Choose from a wide range of
-                    learning options and gain new skills! Our school is know.</p>
+                <h2>Tim Aprila</h2>
             </div>
             <div class="row">
                 <div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
@@ -792,16 +790,16 @@
 
             <div class="row">
                 <!-- Blog 1 -->
-                <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
-                    <div class="single_blog">
-                        <img src="{{ asset('frontend/assets/img/blog/1.jpg') }}" class="img-fluid" alt="image" />
-                        <div class="content_box">
-                            <span>May 10, 2024 | <a href="blog.html">Education</a></span>
-                            <h2><a href="blog.html">Professional Mobile Painting and Sculpting</a></h2>
-                            <a class="btn_one" href="blog.html">Read More <i class="ti-arrow-top-right"></i></a>
+                    <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
+                        <div class="single_blog">
+                            <img src="{{ asset('frontend/assets/img/blog/1.jpg') }}" class="img-fluid" alt="image" />
+                            <div class="content_box">
+                                <span>May 10, 2024 | <a href="blog.html">Education</a></span>
+                                <h2><a href="blog.html">Professional Mobile Painting and Sculpting</a></h2>
+                                <a class="btn_one" href="{{ route('detail-berita') }}">Read More <i class="ti-arrow-top-right"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
                 <!-- Blog 2 -->
                 <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">

@@ -10,8 +10,7 @@
     <meta name="description" content="Eduleb - Education HTML Template">
     <meta name="keywords"
         content="agency, business, corporate, creative, html5, modern, multipurpose, One Page, parallax, startup">
-    <!-- SITE TITLE -->
-    <title>Aprila Indonesia</title>
+    <title>@yield('title')</title>
     @include('includes.frontend.style')
 </head>
 
