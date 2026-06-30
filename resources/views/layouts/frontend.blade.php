@@ -22,5 +22,19 @@
 
     @include('includes.frontend.script')
 </body>
-
+@stack('scripts')
+@if (session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Terima Kasih!',
+                html: `
+                <p>Terima kasih telah memberikan komentar.</p>
+                <p>Komentar Anda telah berhasil dikirim dan sedang menunggu <strong>validasi dari admin</strong> sebelum ditampilkan.</p>
+            `,
+                confirmButtonText: 'Baik',
+                confirmButtonColor: '#3085d6'
+            });
+        </script>
+    @endif
 </html>

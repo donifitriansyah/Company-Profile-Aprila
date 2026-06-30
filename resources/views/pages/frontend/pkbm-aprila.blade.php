@@ -86,7 +86,7 @@
                         </div>
                         <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
                             class="fa fa-star"></i><i class="fa fa-star"></i>
-                        <h4><a href="course.html">Paket A</a></h4>
+                        <h4><a href="{{ route('detail-kursus') }}">Paket A</a></h4>
                         <p><span class="ti-alarm-clock"> </span>Online & Offline</p>
                         <div class="price">Jenjang SD & Sederajat</div>
                     </div>

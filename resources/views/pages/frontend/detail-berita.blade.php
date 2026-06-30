@@ -1,223 +1,433 @@
 @extends('layouts.frontend')
-@section('title')
-    Nama Berita
-@endsection
+
+@section('title', $berita->judul)
+
 @section('content')
+
     <section class="section-top"
-        style="background-image: url('{{ asset('frontend/assets/img/bg-2.png') }}');
-           background-size: cover;
-           background-position: center;
-           background-repeat: no-repeat;">
+        style="background-image:url('{{ asset('frontend/assets/img/bg-2.png') }}');
+    background-size:cover;
+    background-position:center;">
+
         <div class="container">
+
             <div class="col-lg-10 offset-lg-1 text-center">
-                <div class="section-top-title wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
-                    <h1>Nama Berita</h1>
+
+                <div class="section-top-title">
+
+                    <h1>{{ $berita->judul }}</h1>
+
                     <ul>
-                        <li><a href="{{ route('welcome') }}">Beranda</a></li>
-                        <li> / Nama Berita</li>
+                        <li>
+                            <a href="{{ route('welcome') }}">
+                                Beranda
+                            </a>
+                        </li>
+
+                        <li>/</li>
+
+                        <li>
+                            <a href="{{ route('berita') }}">
+                                Berita
+                            </a>
+                        </li>
+
+                        <li>/ {{ $berita->judul }}</li>
+
                     </ul>
-                </div><!-- //.HERO-TEXT -->
-            </div><!--- END COL -->
-        </div><!--- END CONTAINER -->
+
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
+
     <section class="blog-page section-padding">
+
         <div class="container">
-            <div class="row">
-                <div class="col-lg-7 col-sm-12 col-xs-12">
-                    <div class="arti_single">
-                        <div class="arti_img_two">
-                            <img src="assets/img/blog/3.jpg" class="img-fluid" alt="Blog image" />
-                        </div>
-                        <div class="arti_content ">
-                            <p>I almost couldn’t believe it was real! For my first test I had generate some website copy for
-                                me. I provided about 50 words to describe my business along with my business name. generated
-                                two variants of copy each with several paragraphs of professional sounding copy. I
-                                immediately shared the results with a friend who couldn’t believe it was written by an AI.
-                                is worth every Yaley and then some. Describe my business along with my business name.
-                                generated two variants of copy each with several paragraphs of professional sounding copy. I
-                                immediately shared the results with a friend who couldn’t believe it was written by an AI.
-                                is worth every Yaley and then some!</p>
-                        </div>
-                        <div class="arti_sp">
-                            <h2>Enhancing Your E-commerce Store With AI Writing Assistants</h2>
-                            <img src="assets/img/blog/1.png" class="img-fluid" alt="Blog image" />
-                            <p>I immediately shared the results with a friend who couldn’t believe it was written by an AI.
-                                is worth every Yaley and then some. Describe my business along with my business name.
-                                generated two variants of copy each with several paragraphs of professional sounding copy. I
-                                immediately shared the results with a friend who couldn’t believe it was written by an AI.
-                                is worth every Yaley and then some!</p>
-                        </div>
-                        <div class="share_sp">
-                            <h4>Share</h4>
-                            <ul>
-                                <li><a href="#"><span class="ti-facebook"></span> Facebook</a></li>
-                                <li><a href="#"><span class="ti-twitter"></span> Twitter</a></li>
-                                <li><a href="#"><span class="ti-instagram"></span> Instagram</a></li>
-                                <li><a href="#"><span class="ti-linkedin"></span> Linkedin</a></li>
-                            </ul>
-                        </div>
-                    </div><!-- END ARTI SINGLE  -->
-                    <!--- END AUTHOR PART -->
-                    <div class="comments_part mt-5">
-                        <h3 class="blog_head_title">Komentar</h3>
-                        <div class="single_comment">
-                            <h4>Ayoub Fennouni</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultricies quam nisi, vel
-                                gravida enim accumsan id. Praesent justo quam, auctor et lorem in, pulvinar ornare orci.</p>
-                        </div><!--- END SINGLE COMMENT -->
-                        <div class="single_comment sc_left">
-                            <h4>Kader Bhai</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultricies quam nisi, vel
-                                gravida enim accumsan id. Praesent justo quam, auctor et lorem in, pulvinar ornare orci.</p>
-                        </div><!--- END SINGLE COMMENT -->
-                        <div class="single_comment single_comment_mbnone">
-                            <h4>Mark Linomi</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultricies quam nisi, vel
-                                gravida enim accumsan id. Praesent justo quam, auctor et lorem in, pulvinar ornare orci.</p>
-                        </div><!--- END SINGLE COMMENT -->
-                    </div><!--- END COMMENTS PART -->
-                    <div class="comment_form">
-                        <h3 class="blog_head_title">Add a Comment</h3>
-                        <div class="contact comment-box">
-                            <form id="contact-form" method="post" enctype="multipart/form-data">
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <input type="text" name="name" class="form-control" id="first-name"
-                                            placeholder="Name" required="required">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <input type="email" name="email" class="form-control" id="first-email"
-                                            placeholder="Email" required="required">
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <input type="text" name="subject" class="form-control" id="subject"
-                                            placeholder="Subject" required="required">
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <textarea rows="6" name="message" class="form-control" id="description" placeholder="Your Message"
-                                            required="required"></textarea>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="actions">
-                                            <button type="submit" value="Send message" name="submit" id="submitButton"
-                                                class="btn btn_one" title="Submit Your Message!">Submit Comment</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div><!--- END COMMENT FORM -->
-                </div><!-- END COL-->
-                <div class="col-lg-5 col-sm-12 col-xs-12">
-                    <!-- END SINGLE POST -->
 
-                    <div class="sidebar-post">
-                        <div class="sidebar_title">
-                            <h4>Popular post</h4>
-                        </div>
-                        <div class="single_popular">
-                            <a href="single_blog.html"><img src="assets/img/blog/blog-1.png" alt="" /></a>
-                            <h5><a href="single_blog.html">Supercharging Your SEO Game with AI Writing Assistants</a></h5>
-                        </div><!-- END SINGLE POPULAR POST -->
-                        <div class="single_popular">
-                            <a href="single_blog.html"><img src="assets/img/blog/blog-2.png" alt="" /></a>
-                            <h5><a href="single_blog.html">AI Writing Assistants and the Future of Content Marketing</a>
-                            </h5>
-                        </div><!-- END SINGLE POPULAR POST -->
-                        <div class="single_popular">
-                            <a href="single_blog.html"><img src="assets/img/blog/blog-3.png" alt="" /></a>
-                            <h5><a href="single_blog.html">Enhancing Your E-commerce Store With AI Writing Assistants.</a>
-                            </h5>
-                        </div><!-- END SINGLE POPULAR POST -->
-                        <div class="single_popular">
-                            <a href="single_blog.html"><img src="assets/img/blog/blog-4.png" alt="" /></a>
-                            <h5><a href="single_blog.html">Building your content strategy cannot get easier than this.</a>
-                            </h5>
-                        </div><!-- END SINGLE POPULAR POST -->
-                        <div class="single_popular">
-                            <a href="single_blog.html"><img src="assets/img/blog/blog-5.png" alt="" /></a>
-                            <h5><a href="single_blog.html">This is the only read you would need before sitting down to
-                                    prepare</a></h5>
-                        </div><!-- END SINGLE POPULAR POST -->
-                    </div><!-- END SIDEBAR POST -->
-                    <div class="sidebar-post">
-                        <div class="sidebar_title">
-                            <h4>Follow us</h4>
-                        </div>
-                        <div class="single_social">
-                            <ul>
-                                <li>
-                                    <div class="social_item b_facebook"><a href="#" title="facebook"><i
-                                                class="fa fa-facebook"></i><span class="item-list">150K Likes</span></a>
-                                    </div>
-                                </li>
+            <div class="row justify-content-center">
 
-                                <li>
-                                    <div class="social_item b_twitter"><a href="#" title="twitter"><i
-                                                class="fa fa-twitter"></i><span class="item-list">138K
-                                                Followers</span></a></div>
-                                </li>
+                <div class="col-lg-12">
 
-                                <li>
-                                    <div class="social_item b_youtube"><a href="#" title="youtube"><i
-                                                class="fa fa-youtube"></i><span class="item-list">90K
-                                                Subscribers</span></a></div>
-                                </li>
+                    <article class="arti_single">
 
-                                <li>
-                                    <div class="social_item b_pinterest"><a href="#" title="pinterest"><i
-                                                class="fa fa-pinterest"></i><span class="item-list">350K
-                                                Followers</span></a></div>
-                                </li>
+                        {{-- Thumbnail --}}
+                        @if ($berita->thumbnail)
+                            <div class="arti_img_two mb-4">
 
-                                <li>
-                                    <div class="social_item b_tumblr"><a href="#" title="rss"><i
-                                                class="fa fa-tumblr"></i><span class="item-list">901 Followers</span></a>
-                                    </div>
-                                </li>
+                                <img src="{{ asset('storage/' . $berita->thumbnail) }}"
+                                    class="img-fluid rounded shadow w-100" style="height:500px; object-fit:cover;">
 
-                                <li>
-                                    <div class="social_item b_rss"><a href="#" title="rss"><i
-                                                class="fa fa-rss"></i><span class="item-list">411 Followers</span></a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div><!-- END SOCIAL MEDIA POST -->
-                    </div><!-- END SIDEBAR POST -->
-                    <div class="sidebar-post">
-                        <div class="sidebar_title">
-                            <h4>CATEGORIES</h4>
-                        </div>
-                        <div class="single_category">
-                            <ul>
-                                <li><a href="#">Education <sup>11</sup></a></li>
-                                <li><a href="#">Ai Content <sup>44</sup></a></li>
-                                <li><a href="#">New Course <sup>33</sup></a></li>
-                                <li><a href="#">Marketing <sup>14</sup></a></li>
-                                <li><a href="#">Software <sup>21</sup></a></li>
-                                <li><a href="#">Design <sup>01</sup></a></li>
-                            </ul>
-                        </div><!-- END SOCIAL MEDIA POST -->
-                    </div><!-- END SIDEBAR POST -->
-                    <div class="sidebar-post">
-                        <div class="tag">
-                            <div class="sidebar_title">
-                                <h4>Popular Tag</h4>
                             </div>
-                            <a href="#">Education</a>
-                            <a href="#">Course</a>
-                            <a href="#">Event</a>
-                            <a href="#">copywriting</a>
-                            <a href="#">Graphic</a>
-                            <a href="#">Clean Design</a>
-                            <a href="#">Digital Marketing</a>
-                            <a href="#">All project</a>
+                        @endif
+
+
+                        {{-- Meta --}}
+                        <div class="mb-4">
+
+                            <span class="badge bg-primary">
+
+                                {{ $berita->kategori->nama }}
+
+                            </span>
+
+                            <span class="ms-3">
+
+                                <i class="fa fa-calendar"></i>
+
+                                {{ $berita->published_at?->format('d F Y') }}
+
+                            </span>
+
+                            <span class="ms-3">
+
+                                <i class="fa fa-user"></i>
+
+                                {{ $berita->user->name }}
+
+                            </span>
+
+                            <span class="ms-3">
+
+                                <i class="fa fa-eye"></i>
+
+                                {{ number_format($berita->views) }}
+
+                            </span>
 
                         </div>
-                    </div>
 
-                </div><!--- END COL -->
-            </div><!-- END ROW-->
-        </div><!-- END CONTAINER-->
+                        {{-- Judul --}}
+                        <h2 class="mb-4">
+
+                            {{ $berita->judul }}
+
+                        </h2>
+
+                        {{-- Ringkasan --}}
+                        @if ($berita->ringkasan)
+                            <div class="alert alert-light border-start border-4 border-primary mb-4">
+
+                                {{ $berita->ringkasan }}
+
+                            </div>
+                        @endif
+
+                        {{-- Isi --}}
+                        <div class="content-berita">
+
+                            {!! $berita->isi !!}
+
+                        </div>
+
+                    </article>
+
+
+                    {{-- GALERI --}}
+                    @if ($berita->galeri->count())
+
+                        <div class="mt-5">
+
+                            <h3 class="mb-4">
+
+                                Galeri Foto
+
+                            </h3>
+
+                            <div class="row">
+
+                                @foreach ($berita->galeri as $gambar)
+                                    <div class="col-lg-4 col-md-6 mb-4">
+
+                                        <div class="card shadow-sm border-0">
+
+                                            <img src="{{ asset('storage/' . $gambar->gambar) }}" class="card-img-top"
+                                                style="height:250px;object-fit:cover;">
+
+                                            @if ($gambar->caption)
+                                                <div class="card-body">
+
+                                                    <p class="text-center mb-0">
+
+                                                        {{ $gambar->caption }}
+
+                                                    </p>
+
+                                                </div>
+                                            @endif
+
+                                        </div>
+
+                                    </div>
+                                @endforeach
+
+                            </div>
+
+                        </div>
+
+                    @endif
+
+                    <div class="comments_part mt-5">
+
+                        <h3 class="blog_head_title">
+
+                            Komentar ({{ $berita->komentar->where('is_approved', true)->count() }})
+
+                        </h3>
+
+                        @forelse($berita->komentar->where('is_approved', true) as $item)
+                            <div class="single_comment">
+
+                                <h4>{{ $item->nama }}</h4>
+
+                                <small class="text-muted">
+
+                                    {{ $item->created_at->format('d M Y H:i') }}
+
+                                </small>
+
+                                <p class="mt-2">
+
+                                    {{ $item->komentar }}
+
+                                </p>
+
+                            </div>
+
+                        @empty
+
+                            <div class="alert alert-light">
+
+                                Belum ada komentar.
+
+                            </div>
+                        @endforelse
+
+                    </div>
+                    @if ($errors->any())
+
+                        <div class="alert alert-danger">
+
+                            <ul class="mb-0">
+
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+
+                            </ul>
+
+                        </div>
+
+                    @endif
+
+                    <form action="{{ route('komentar-berita.store', $berita->slug) }}" method="POST">
+
+                        @csrf
+
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul class="mb-0">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
+                        <div class="row">
+
+                            <div class="form-group col-md-6 mb-3">
+                                <input type="text" name="nama" class="form-control" placeholder="Nama"
+                                    autocomplete="name" value="{{ old('nama') }}" required>
+                            </div>
+
+                            <div class="form-group col-md-6 mb-3">
+                                <input type="email" name="email" class="form-control" placeholder="Email"
+                                    autocomplete="email" value="{{ old('email') }}">
+                            </div>
+
+                            <div class="form-group col-md-12 mb-3">
+                                <textarea name="komentar" rows="6" class="form-control" placeholder="Tulis komentar..." required>{{ old('komentar') }}</textarea>
+                            </div>
+
+                            <div class="col-md-12 mb-3">
+
+                                {!! NoCaptcha::display() !!}
+
+                                @error('g-recaptcha-response')
+                                    <small class="text-danger">
+                                        {{ $message }}
+                                    </small>
+                                @enderror
+
+                            </div>
+
+                            <div class="col-md-12">
+
+                                <button type="submit" class="btn btn_one">
+                                    Kirim Komentar
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+
+
+
+
+
+                    {{-- KATEGORI --}}
+                    @if ($kategori->count())
+
+                        <div class="mt-5">
+
+                            <h3>
+
+                                Kategori
+
+                            </h3>
+
+                            <div class="mt-3">
+
+                                @foreach ($kategori as $item)
+                                    <a href="{{ route('berita', ['kategori' => $item->slug]) }}"
+                                        class="badge bg-light text-dark border p-2 me-2 mb-2">
+
+                                        {{ $item->nama }}
+
+                                        ({{ $item->total_berita }})
+                                    </a>
+                                @endforeach
+
+                            </div>
+
+                        </div>
+
+                    @endif
+
+
+                    {{-- BERITA TERBARU --}}
+                    @if ($beritaTerbaru->count())
+
+                        <div class="mt-5">
+
+                            <h3 class="mb-4">
+
+                                Berita Lainnya
+
+                            </h3>
+
+                            <div class="row">
+
+                                @foreach ($beritaTerbaru as $item)
+                                    @if ($item->id != $berita->id)
+                                        <div class="col-lg-4 col-md-6 mb-4">
+
+                                            <div class="single_blog">
+
+                                                @if ($item->thumbnail)
+                                                    <img src="{{ asset('storage/' . $item->thumbnail) }}" class="img-fluid"
+                                                        style="height:230px;width:100%;object-fit:cover;">
+                                                @endif
+
+                                                <div class="content_box">
+
+                                                    <span>
+
+                                                        {{ $item->published_at?->format('d M Y') }}
+
+                                                        |
+
+                                                        {{ $item->kategori->nama }}
+
+                                                    </span>
+
+                                                    <h2>
+
+                                                        <a href="{{ route('detail-berita', $item->slug) }}">
+
+                                                            {{ Str::limit($item->judul, 70) }}
+
+                                                        </a>
+
+                                                    </h2>
+
+                                                    <a class="btn_one" href="{{ route('detail-berita', $item->slug) }}">
+
+                                                        Baca Selengkapnya
+
+                                                        <i class="ti-arrow-top-right"></i>
+
+                                                    </a>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    @endif
+                                @endforeach
+
+                            </div>
+
+                        </div>
+
+                    @endif
+
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
+    <style>
+        .content-berita img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .content-berita iframe {
+            width: 100%;
+            min-height: 450px;
+        }
+
+        .content-berita table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .content-berita p {
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+
+        .content-berita h1,
+        .content-berita h2,
+        .content-berita h3,
+        .content-berita h4 {
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .content-berita ul,
+        .content-berita ol {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+
+    
+
 @endsection
+@push('scripts')
+    {!! NoCaptcha::renderJs() !!}
+@endpush

@@ -784,52 +784,65 @@
         <div class="container">
             <div class="section-title text-center">
                 <h2>Berita Terbaru</h2>
-                <p>We offer a brand new approach to the most basic learning paradigms. Choose from a wide range of
-                    learning options and gain new skills! Our school is know.</p>
             </div>
 
             <div class="row">
-                <!-- Blog 1 -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
+
+                @forelse($beritaTerbaru as $item)
+                    <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
+
                         <div class="single_blog">
-                            <img src="{{ asset('frontend/assets/img/blog/1.jpg') }}" class="img-fluid" alt="image" />
+
+                            @if ($item->thumbnail)
+                                <img src="{{ asset('storage/' . $item->thumbnail) }}" class="img-fluid"
+                                    style="height:250px;width:100%;object-fit:cover;" alt="{{ $item->judul }}">
+                            @else
+                                <img src="{{ asset('frontend/assets/img/blog/default.jpg') }}" class="img-fluid"
+                                    style="height:250px;width:100%;object-fit:cover;" alt="{{ $item->judul }}">
+                            @endif
+
                             <div class="content_box">
-                                <span>May 10, 2024 | <a href="blog.html">Education</a></span>
-                                <h2><a href="blog.html">Professional Mobile Painting and Sculpting</a></h2>
-                                <a class="btn_one" href="{{ route('detail-berita') }}">Read More <i class="ti-arrow-top-right"></i></a>
+
+                                <span>
+                                    {{ $item->published_at?->format('d M Y') }}
+                                    |
+                                    <a href="#">
+                                        {{ $item->kategori->nama }}
+                                    </a>
+                                </span>
+
+                                <h2>
+                                    <a href="{{ route('detail-berita', $item->slug) }}">
+                                        {{ Str::limit($item->judul, 55) }}
+                                    </a>
+                                </h2>
+
+                                <a class="btn_one" href="{{ route('detail-berita', $item->slug) }}">
+                                    Read More
+                                    <i class="ti-arrow-top-right"></i>
+                                </a>
+
                             </div>
+
                         </div>
+
                     </div>
 
-                <!-- Blog 2 -->
-                <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s">
-                    <div class="single_blog">
-                        <img src="{{ asset('frontend/assets/img/blog/2.jpg') }}" class="img-fluid" alt="image" />
-                        <div class="content_box">
-                            <span>May 16, 2024 | <a href="blog.html">Education</a></span>
-                            <h2><a href="blog.html">Professional Ceramic Moulding for Beginner</a></h2>
-                            <a class="btn_one" href="blog.html">Read More <i class="ti-arrow-top-right"></i></a>
-                        </div>
-                    </div>
-                </div>
+                @empty
 
-                <!-- Blog 3 -->
-                <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
-                    <div class="single_blog">
-                        <img src="{{ asset('frontend/assets/img/blog/3.jpg') }}" class="img-fluid" alt="image" />
-                        <div class="content_box">
-                            <span>May 18, 2024 | <a href="blog.html">Programing</a></span>
-                            <h2><a href="blog.html">Education Is About Create Leaders For Tomorrow</a></h2>
-                            <a class="btn_one" href="blog.html">Read More <i class="ti-arrow-top-right"></i></a>
-                        </div>
+                    <div class="col-12 text-center">
+
+                        <p>Belum ada berita terbaru.</p>
+
                     </div>
-                </div>
+                @endforelse
+
             </div>
 
             <!-- Tombol Lihat Semua Berita -->
             <div class="row mt-5">
                 <div class="col-12 text-center">
-                    <a href="blog.html" class="btn_one btn-lg">
+                    <a href="{{ route('berita') }}" class="btn_one btn-lg">
                         Lihat Semua Berita
                         <i class="ti-arrow-top-right"></i>
                     </a>

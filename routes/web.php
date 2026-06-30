@@ -1,11 +1,16 @@
 <?php
+
+use App\Http\Controllers\Admin\BeritaController;
+use App\Http\Controllers\Admin\GaleriBeritaController;
 use App\Http\Controllers\Admin\KategoriBeritaController;
+use App\Http\Controllers\Frontend\FrontendBeritaController;
+use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\KomentarBeritaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/', [HomeController::class, 'index'])
+    ->name('welcome');
 
 Route::get('/tentang-kami', function () {
     return view('pages.frontend.tentang-kami');
@@ -22,9 +27,23 @@ Route::get('/kontak-kami', function () {
     return view('pages.frontend.kontak-kami');
 })->name('kontak-kami');
 
-Route::get('/berita', function () {
-    return view('pages.frontend.berita');
-})->name('berita');
+Route::get('/detail-kursus', function () {
+    return view('pages.frontend.detail-kursus');
+})->name('detail-kursus');
+
+Route::get('/berita', [FrontendBeritaController::class, 'index'])
+    ->name('berita');
+
+Route::get('/berita/{slug}', [FrontendBeritaController::class, 'show'])
+    ->name('detail-berita');
+
+Route::get('/berita/{slug}', [FrontendBeritaController::class, 'detailBerita'])
+    ->name('detail-berita');
+
+Route::post(
+    '/berita/{slug}/komentar',
+    [KomentarBeritaController::class, 'store']
+)->name('komentar-berita.store')->middleware('throttle:5,1');
 
 Route::get('/detail-berita', function () {
     return view('pages.frontend.detail-berita');
@@ -40,10 +59,46 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::resource('admin-kategori-berita', KategoriBeritaController::class);
+    Route::resource('admin-berita', BeritaController::class);
+
+    Route::get('admin-galeri-berita/{berita}', [GaleriBeritaController::class, 'index'])
+        ->name('admin-galeri-berita.index');
+
+    Route::post('admin-galeri-berita', [GaleriBeritaController::class, 'store'])
+        ->name('admin-galeri-berita.store');
+
+    Route::put('admin-galeri-berita/{id}', [GaleriBeritaController::class, 'update'])
+        ->name('admin-galeri-berita.update');
+
+    Route::delete('admin-galeri-berita/{id}', [GaleriBeritaController::class, 'destroy'])
+        ->name('admin-galeri-berita.destroy');
+
+    Route::get(
+        'admin-galeri-berita/{berita}/create',
+        [GaleriBeritaController::class, 'create']
+    )->name('admin-galeri-berita.create');
+
+    Route::get(
+        'admin-galeri-berita/{id}/edit',
+        [GaleriBeritaController::class, 'edit']
+    )->name('admin-galeri-berita.edit');
+
+    Route::prefix('admin-komentar-berita')->name('admin-komentar-berita.')->group(function () {
+
+    Route::get('/', [KomentarBeritaController::class, 'index'])
+        ->name('index');
+
+    Route::put('/{id}/approve', [KomentarBeritaController::class, 'approve'])
+        ->name('approve');
+
+    Route::put('/{id}/reject', [KomentarBeritaController::class, 'reject'])
+        ->name('reject');
+
+    Route::delete('/{id}', [KomentarBeritaController::class, 'destroy'])
+        ->name('destroy');
+
 });
-
-
-
+});
 
 
 require __DIR__ . '/auth.php';
