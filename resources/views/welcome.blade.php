@@ -376,46 +376,41 @@
     <!-- END WHY CHOOSE US -->
 
     <section class="awards section-padding"
-        style="background-image: url('{{ asset('frontend/assets/img/bg/background3.png') }}'); background-size: cover; background-position: center center;">
-        <div class="container">
-            <div class="section-title text-center mb-5">
-                <h2>Prestasi Aprila</h2>
-                <p>Berikut adalah prestasi - prestasi yang pernah diraih Aprila.</p>
-            </div>
+    style="background-image: url('{{ asset('frontend/assets/img/bg/background3.png') }}'); background-size: cover; background-position: center center;">
 
-            <div class="awards-carousel owl-carousel owl-theme">
-                <div class="award-card">
-                    <img src="{{ asset('frontend/assets/img/awards/1.png') }}" alt="Prestasi 1">
-                    <h4>Juara 2 Pembelajaran Desain Busana Kerja Motiv Tradisional</h4>
-                    <p class="award-desc">DINAS PENDIDIKAN PROVINSI KALIMANTAN BARAT</p>
-                </div>
+    <div class="container">
 
-                <div class="award-card">
-                    <img src="{{ asset('frontend/assets/img/awards/2.png') }}" alt="Prestasi 2">
-                    <h4>Juara 3 Pengelola LKP</h4>
-                    <p class="award-desc">APRESIASI GTK PAUD DAN DIKMAS PROVINSI KALIMANTAN BARAT TAHUN 2019</p>
-                </div>
-
-                <div class="award-card">
-                    <img src="{{ asset('frontend/assets/img/awards/3.png') }}" alt="Prestasi 3">
-                    <h4>Juara 3 Kategori Lembaga Kursus dan Pelatihan</h4>
-                    <p class="award-desc">KEMENTERIAN PENDIDIKAN, KEBUDAYAAN, RISET, DAN TEKNOLOGI</p>
-                </div>
-
-                <div class="award-card">
-                    <img src="{{ asset('frontend/assets/img/award3.png') }}" alt="Excellence Award">
-                    <h4>Excellence Award</h4>
-                    <p class="award-desc">Penghargaan atas kualitas layanan terbaik</p>
-                </div>
-
-                <div class="award-card">
-                    <img src="{{ asset('frontend/assets/img/award3.png') }}" alt="Excellence Award">
-                    <h4>Excellence Award</h4>
-                    <p class="award-desc">Penghargaan atas kualitas layanan terbaik</p>
-                </div>
-            </div>
+        <div class="section-title text-center mb-5">
+            <h2>Prestasi Aprila</h2>
+            <p>Berikut adalah prestasi - prestasi yang pernah diraih Aprila.</p>
         </div>
-    </section>
+
+        <div class="awards-carousel owl-carousel owl-theme">
+
+            @foreach($awards as $award)
+
+                <div class="award-card">
+
+                    {{-- IMAGE --}}
+                    <img src="{{ asset('storage/'.$award->image) }}"
+                         alt="{{ $award->title }}">
+
+                    {{-- TITLE --}}
+                    <h4>{{ $award->title }}</h4>
+
+                    {{-- INSTITUTION --}}
+                    <p class="award-desc">
+                        {{ $award->institution }}
+                    </p>
+
+                </div>
+
+            @endforeach
+
+        </div>
+
+    </div>
+</section>
 
     <!-- START TESTIMONIALS -->
     <section class=" section-padding" style=" background-size: cover; background-position: center center;">
@@ -587,7 +582,7 @@
             <div class="row">
                 <div class="col-lg-8 col-sm-6 col-xs-12">
                     <div class="section-title">
-                        <h2>Ayo Bergabung dengan <b>80,000+ </b> <br />Kursus dan Pelatihan.</h2>
+                        <h2>Ayo Bergabung dengan Kelas Paket, <br />Kursus dan Pelatihan.</h2>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 col-xs-12">
@@ -599,78 +594,46 @@
 
             <!-- Course Carousel -->
             <div class="course-carousel owl-carousel owl-theme">
-                <div class="single_course">
-                    <div class="single_c_img">
-                        <img src="{{ asset('frontend/assets/img/course/1.png') }}" class="img-fluid" alt="Canva Pro" />
-                    </div>
-                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                        class="fa fa-star"></i><i class="fa fa-star"></i>
-                    <h4><a href="course.html">Canva Pro</a></h4>
-                    <p><span class="ti-book"></span> 12 Course</p>
-                    <p><span class="ti-alarm-clock"></span> 2 Hrs 32 Min</p>
-                    <div class="price">Rp. 250.000</div>
-                </div>
 
-                <div class="single_course">
-                    <div class="single_c_img">
-                        <img src="{{ asset('frontend/assets/img/course/2.png') }}" class="img-fluid"
-                            alt="Kursus Komputer" />
-                    </div>
-                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                        class="fa fa-star"></i><i class="fa fa-star"></i>
-                    <h4><a href="course.html">Kursus Komputer</a></h4>
-                    <p><span class="ti-book"></span> 12 Course</p>
-                    <p><span class="ti-alarm-clock"></span> 2 Hrs 32 Min</p>
-                    <div class="price">Rp. 250.000</div>
-                </div>
+                @foreach ($courses as $course)
+                    <div class="single_course">
 
-                <div class="single_course">
-                    <div class="single_c_img">
-                        <img src="{{ asset('frontend/assets/img/course/3.png') }}" class="img-fluid"
-                            alt="Kursus Komputer" />
-                    </div>
-                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                        class="fa fa-star"></i><i class="fa fa-star"></i>
-                    <h4><a href="course.html">Kursus Komputer</a></h4>
-                    <p><span class="ti-book"></span> 12 Course</p>
-                    <p><span class="ti-alarm-clock"></span> 2 Hrs 32 Min</p>
-                    <div class="price">Rp. 250.000</div>
-                </div>
+                        <div class="single_c_img">
 
-                <!-- Duplicate untuk smooth looping -->
-                <div class="single_course">
-                    <div class="single_c_img">
-                        <img src="{{ asset('frontend/assets/img/course/1.png') }}" class="img-fluid" alt="Canva Pro" />
+                            <img src="{{ asset('storage/' . $course->image) }}" class="img-fluid"
+                                alt="{{ $course->title }}" />
+
+                        </div>
+
+                        {{-- rating dummy (bisa diganti nanti dari DB) --}}
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+
+                        <h4>
+                            <a href="{{ route('detail-courses.show', $course->id) }}">
+                                {{ $course->title }}
+                            </a>
+                        </h4>
+
+                        <p>
+                            <span class="ti-book"></span>
+                            Online & Offline
+                        </p>
+
+                        <p>
+                            <span class="ti-calendar"></span>
+                            {{ $course->duration_days }} Hari
+                        </p>
+
+                        <div class="price">
+                            Rp {{ number_format($course->price, 0, ',', '.') }}
+                        </div>
+
                     </div>
-                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                        class="fa fa-star"></i><i class="fa fa-star"></i>
-                    <h4><a href="course.html">Canva Pro</a></h4>
-                    <p><span class="ti-book"></span> 12 Course</p>
-                    <p><span class="ti-alarm-clock"></span> 2 Hrs 32 Min</p>
-                    <div class="price">Rp. 250.000</div>
-                </div>
-                <div class="single_course">
-                    <div class="single_c_img">
-                        <img src="{{ asset('frontend/assets/img/course/1.png') }}" class="img-fluid" alt="Canva Pro" />
-                    </div>
-                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                        class="fa fa-star"></i><i class="fa fa-star"></i>
-                    <h4><a href="course.html">Canva Pro</a></h4>
-                    <p><span class="ti-book"></span> 12 Course</p>
-                    <p><span class="ti-alarm-clock"></span> 2 Hrs 32 Min</p>
-                    <div class="price">Rp. 250.000</div>
-                </div>
-                <div class="single_course">
-                    <div class="single_c_img">
-                        <img src="{{ asset('frontend/assets/img/course/1.png') }}" class="img-fluid" alt="Canva Pro" />
-                    </div>
-                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                        class="fa fa-star"></i><i class="fa fa-star"></i>
-                    <h4><a href="course.html">Canva Pro</a></h4>
-                    <p><span class="ti-book"></span> 12 Course</p>
-                    <p><span class="ti-alarm-clock"></span> 2 Hrs 32 Min</p>
-                    <div class="price">Rp. 250.000</div>
-                </div>
+                @endforeach
 
             </div>
         </div>
@@ -681,100 +644,35 @@
     <!-- START TEAM -->
     <section class="team_area section-padding">
         <div class="container">
+
             <div class="section-title text-center">
                 <h2>Tim Aprila</h2>
             </div>
+
             <div class="row">
-                <div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
-                    data-wow-offset="0">
-                    <div class="our-team">
-                        <div class="team-content">
-                            <a href="#"><img src="{{ asset('frontend/assets/img/team/team1.jpg') }}"
-                                    alt=""></a>
-                            <ul class="social-links">
-                                <li><a href="#"><i class="fa-solid fa-x"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                            </ul>
+
+                @foreach ($teams as $team)
+                    <div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp">
+
+                        <div class="our-team">
+
+                            <div class="team-content">
+                                <img src="{{ asset('storage/' . $team->photo) }}" alt="">
+                            </div>
+
+                            <div class="team-prof">
+                                <h3>{{ $team->name }}</h3>
+                                <span>{{ $team->position }}</span>
+                            </div>
+
                         </div>
-                        <div class="team-prof">
-                            <h3>Ratu Bilkis</h3>
-                            <span>Web designer</span>
-                        </div>
-                        <div class="sth_det2">
-                            <span class="ti-file"> <u>04 Course</u></span>
-                            <span class="ti-user"> <u>27 Student</u></span>
-                        </div>
+
                     </div>
-                </div><!--- END COL -->
-                <div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
-                    data-wow-offset="0">
-                    <div class="our-team">
-                        <div class="team-content">
-                            <a href="#"><img src="{{ asset('frontend/assets/img/team/team2.jpg') }}"
-                                    alt=""></a>
-                            <ul class="social-links">
-                                <li><a href="#"><i class="fa-solid fa-x"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="team-prof">
-                            <h3>Ha Mood</h3>
-                            <span>Instruktur</span>
-                        </div>
-                        <div class="sth_det2">
-                            <span class="ti-file"> <u>06 Course</u></span>
-                            <span class="ti-user"> <u>41 Student</u></span>
-                        </div>
-                    </div>
-                </div><!--- END COL -->
-                <div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
-                    data-wow-offset="0">
-                    <div class="our-team">
-                        <div class="team-content">
-                            <a href="#"><img src="{{ asset('frontend/assets/img/team/team3.jpg') }}"
-                                    alt=""></a>
-                            <ul class="social-links">
-                                <li><a href="#"><i class="fa-solid fa-x"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="team-prof">
-                            <h3>Shyinn Splendid</h3>
-                            <span>Codecanyou</span>
-                        </div>
-                        <div class="sth_det2">
-                            <span class="ti-file"> <u>13 Course</u></span>
-                            <span class="ti-user"> <u>31 Student</u></span>
-                        </div>
-                    </div>
-                </div><!--- END COL -->
-                <div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
-                    data-wow-offset="0">
-                    <div class="our-team">
-                        <div class="team-content">
-                            <a href="#"><img src="{{ asset('frontend/assets/img/team/team4.jpg') }}"
-                                    alt=""></a>
-                            <ul class="social-links">
-                                <li><a href="#"><i class="fa-solid fa-x"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="team-prof">
-                            <h3>Shorif shorifa</h3>
-                            <span>Tsc chottor</span>
-                        </div>
-                        <div class="sth_det2">
-                            <span class="ti-file"> <u>07 Course</u></span>
-                            <span class="ti-user"> <u>24 Student</u></span>
-                        </div>
-                    </div>
-                </div><!--- END COL -->
-            </div><!--- END ROW -->
-        </div><!--- END CONTAINER -->
+                @endforeach
+
+            </div>
+
+        </div>
     </section>
     <!-- END TEAM -->
 

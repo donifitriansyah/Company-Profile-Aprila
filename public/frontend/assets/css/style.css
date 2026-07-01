@@ -2715,7 +2715,7 @@ blockquote::before,
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .our-team .team-content {
@@ -2727,10 +2727,12 @@ blockquote::before,
     width: 100%;
     height: auto;
     transition: all 0.30s linear 0s;
+    border-radius: 20px;
 }
 
 .our-team:hover .team-content img {
     transform: scale(1.2, 1.2);
+
 }
 
 .our-team .social-links {
@@ -2739,6 +2741,7 @@ blockquote::before,
     list-style: none;
     position: absolute;
     bottom: 0;
+
 }
 
 .our-team .social-links li {}

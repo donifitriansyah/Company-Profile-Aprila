@@ -24,6 +24,8 @@ Version      : 1.0
         });
         /* END COURSE CAROUSEL */
 
+
+
         /*PRELOADER JS*/
         $(window).on('load', function () {
             setTimeout(function () {
@@ -126,6 +128,8 @@ Version      : 1.0
             pagination: true,
             navigation: false
         });
+
+
     });
 
 
@@ -141,7 +145,7 @@ Version      : 1.0
         navigation: false
     });
 
-    
+
 
 
     /*START WOW ANIMATION JS*/

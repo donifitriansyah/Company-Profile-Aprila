@@ -4,9 +4,22 @@
 <script src="{{ asset('backend/assets/vendors/apexcharts/apexcharts.js') }}"></script>
 <script src="{{ asset('backend/assets/js/pages/dashboard.js') }}"></script>
 
-<script src="{{ asset('backend/assets/js/main.js') }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{{ asset('backend/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+<script src="{{ asset('backend/assets/js/bootstrap.bundle.min.js') }}"></script>
 
+<script src="{{ asset('backend/assets/vendors/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('backend/assets/vendors/summernote/summernote-lite.min.js') }}"></script>
+
+<script src="{{ asset('backend/assets/js/main.js') }}"></script>
+
+<script src="{{ asset('backend/assets/vendors/simple-datatables/simple-datatables.js') }}"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    // Simple Datatable
+    let table1 = document.querySelector('#table1');
+    let dataTable = new simpleDatatables.DataTable(table1);
+</script>
 <script>
     const Toast = Swal.mixin({
         toast: true,

@@ -58,7 +58,7 @@
 
                     <div class="table-responsive">
 
-                        <table class="table table-bordered" id="datatableKomentar">
+                        <table class="table table-bordered" id="table1">
 
                             <thead>
 

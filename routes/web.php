@@ -1,23 +1,36 @@
 <?php
 
+use App\Http\Controllers\Admin\PrestasiController;
 use App\Http\Controllers\Admin\BeritaController;
 use App\Http\Controllers\Admin\GaleriBeritaController;
 use App\Http\Controllers\Admin\KategoriBeritaController;
+use App\Http\Controllers\Frontend\CourseController;
+use App\Http\Controllers\Frontend\CourseDetailController;
 use App\Http\Controllers\Frontend\FrontendBeritaController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\InstructorController;
 use App\Http\Controllers\Frontend\KomentarBeritaController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Instructor;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])
     ->name('welcome');
 
+
+
 Route::get('/tentang-kami', function () {
     return view('pages.frontend.tentang-kami');
 })->name('tentang-kami');
 
+Route::get('/course/{id}', [CourseDetailController::class, 'show'])
+    ->name('detail-courses.show');
+
 Route::get('/layanan-kami/pkbm-aprila', function () {
-    return view('pages.frontend.pkbm-aprila');
+    $instructors = Instructor::where('category', 'instruktur')
+        ->latest()
+        ->get();
+    return view('pages.frontend.pkbm-aprila', compact('instructors'));
 })->name('pkbm-aprila');
 Route::get('/layanan-kami/kelas-kursus-dan-jasa', function () {
     return view('pages.frontend.kelas-kursus-dan-jasa');
@@ -85,19 +98,24 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('admin-komentar-berita')->name('admin-komentar-berita.')->group(function () {
 
-    Route::get('/', [KomentarBeritaController::class, 'index'])
-        ->name('index');
+        Route::get('/', [KomentarBeritaController::class, 'index'])
+            ->name('index');
 
-    Route::put('/{id}/approve', [KomentarBeritaController::class, 'approve'])
-        ->name('approve');
+        Route::put('/{id}/approve', [KomentarBeritaController::class, 'approve'])
+            ->name('approve');
 
-    Route::put('/{id}/reject', [KomentarBeritaController::class, 'reject'])
-        ->name('reject');
+        Route::put('/{id}/reject', [KomentarBeritaController::class, 'reject'])
+            ->name('reject');
 
-    Route::delete('/{id}', [KomentarBeritaController::class, 'destroy'])
-        ->name('destroy');
+        Route::delete('/{id}', [KomentarBeritaController::class, 'destroy'])
+            ->name('destroy');
+    });
 
-});
+    Route::resource('award', PrestasiController::class);
+
+    Route::resource('admin-course', CourseController::class);
+
+    Route::resource('admin-instructor', InstructorController::class);
 });
 
 

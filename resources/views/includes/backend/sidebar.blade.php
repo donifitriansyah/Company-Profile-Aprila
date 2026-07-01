@@ -14,31 +14,50 @@
             <ul class="menu">
                 <li class="sidebar-title">Menu</li>
 
-                <li class="sidebar-item active ">
-                    <a href="index.html" class='sidebar-link'>
+                <li class="sidebar-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                    <a href="{{ route('dashboard') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="sidebar-item  has-sub">
+                <li
+                    class="sidebar-item has-sub
+                        {{ request()->routeIs('admin-kategori-berita.*', 'admin-berita.*', 'admin-komentar-berita.*') ? 'active' : '' }}">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-stack"></i>
                         <span>Berita</span>
                     </a>
                     <ul class="submenu ">
-                        <li class="submenu-item ">
+                        <li
+                            class="submenu-item {{ request()->routeIs('admin-kategori-berita.index') ? 'active' : '' }}">
                             <a href="{{ route('admin-kategori-berita.index') }}">Kategori Berita</a>
                         </li>
-                        <li class="submenu-item ">
+                        <li class="submenu-item {{ request()->routeIs('admin-berita.index') ? 'active' : '' }}">
                             <a href="{{ route('admin-berita.index') }}">Berita</a>
                         </li>
-                        {{-- <li class="submenu-item ">
-                            <a href="{{ route('admin-galeri-berita.index') }}">Galeri Berita</a>
-                        </li> --}}
-                        <li class="submenu-item ">
+                        <li
+                            class="submenu-item {{ request()->routeIs('admin-komentar-berita.index') ? 'active' : '' }}">
                             <a href="{{ route('admin-komentar-berita.index') }}">Validasi Komentar</a>
                         </li>
                     </ul>
+                </li>
+                <li class="sidebar-item {{ request()->routeIs('admin-course.index') ? 'active' : '' }}">
+                    <a href="{{ route('admin-course.index') }}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Kursus</span>
+                    </a>
+                </li>
+                <li class="sidebar-item {{ request()->routeIs('admin-instructor.index') ? 'active' : '' }}">
+                    <a href="{{ route('admin-instructor.index') }}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Instruktur</span>
+                    </a>
+                </li>
+                <li class="sidebar-item {{ request()->routeIs('award.index') ? 'active' : '' }}">
+                    <a href="{{ route('award.index') }}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Prestasi</span>
+                    </a>
                 </li>
 
 
