@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\Admin\PrestasiController;
 use App\Http\Controllers\Admin\BeritaController;
 use App\Http\Controllers\Admin\GaleriBeritaController;
+use App\Http\Controllers\Admin\JasaController;
 use App\Http\Controllers\Admin\KategoriBeritaController;
+use App\Http\Controllers\Admin\PrestasiController;
+use App\Http\Controllers\Admin\TestimoniController;
 use App\Http\Controllers\Frontend\CourseController;
 use App\Http\Controllers\Frontend\CourseDetailController;
 use App\Http\Controllers\Frontend\FrontendBeritaController;
@@ -11,13 +13,13 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\InstructorController;
 use App\Http\Controllers\Frontend\KomentarBeritaController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Course;
 use App\Models\Instructor;
+use App\Models\Jasa;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])
     ->name('welcome');
-
-
 
 Route::get('/tentang-kami', function () {
     return view('pages.frontend.tentang-kami');
@@ -33,7 +35,11 @@ Route::get('/layanan-kami/pkbm-aprila', function () {
     return view('pages.frontend.pkbm-aprila', compact('instructors'));
 })->name('pkbm-aprila');
 Route::get('/layanan-kami/kelas-kursus-dan-jasa', function () {
-    return view('pages.frontend.kelas-kursus-dan-jasa');
+    $courses = Course::with('overview')->latest()->get();
+    $jasas = Jasa::where('is_active', true)
+        ->orderBy('urutan')
+        ->get();
+    return view('pages.frontend.kelas-kursus-dan-jasa', compact('courses','jasas'));
 })->name('kelas-kursus-dan-jasa');
 
 Route::get('/kontak-kami', function () {
@@ -116,6 +122,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('admin-course', CourseController::class);
 
     Route::resource('admin-instructor', InstructorController::class);
+
+    Route::resource('admin-testimoni', TestimoniController::class);
+
+    Route::resource('admin-jasa', JasaController::class);
 });
 
 

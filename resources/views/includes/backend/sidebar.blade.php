@@ -59,6 +59,18 @@
                         <span>Prestasi</span>
                     </a>
                 </li>
+                <li class="sidebar-item {{ request()->routeIs('admin-testimoni.index') ? 'active' : '' }}">
+                    <a href="{{ route('admin-testimoni.index') }}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Testimoni</span>
+                    </a>
+                </li>
+                <li class="sidebar-item {{ request()->routeIs('admin-jasa.index') ? 'active' : '' }}">
+                    <a href="{{ route('admin-jasa.index') }}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Jasa</span>
+                    </a>
+                </li>
 
 
                 <li class="sidebar-item">

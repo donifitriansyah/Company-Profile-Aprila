@@ -24,126 +24,154 @@
 
 
     <!-- START COURSE -->
-    <section class=" section-padding"
-        >
+    <section class=" section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-sm-6 col-xs-12">
-                    <div class="section-title">
-                        <h2>Kelas Kursus yang tersedia <br><b>di Aprila</b>.</h2>
-                    </div>
-                </div><!--- END COL -->
-                <div class="col-lg-4 col-sm-6 col-xs-12">
-                    <div class="cour_btn">
-                        <a href="course.html" class="btn_one">Daftar Sekarang <i class="ti-arrow-top-right"></i></a>
-                    </div>
-                </div><!--- END COL -->
-            </div><!--- END ROW -->
-            <div class="row">
-                <div class="col-lg-4 col-sm-6 col-xs-12">
-                    <div class="single_course">
-                        <div class="single_c_img">
-                            <img src="{{ asset('frontend/assets/img/course/1.png') }}" class="img-fluid"
-                                alt="course-image" />
+
+                @foreach ($courses as $course)
+                    <div class="col-lg-4 col-md-6 mb-4">
+
+                        <div class="single_course">
+
+                            <div class="single_c_img">
+
+                                @if ($course->image)
+                                    <img src="{{ asset('storage/' . $course->image) }}" class="img-fluid"
+                                        alt="{{ $course->title }}">
+                                @else
+                                    <img src="{{ asset('frontend/assets/img/course/default.jpg') }}" class="img-fluid"
+                                        alt="Default">
+                                @endif
+
+                            </div>
+
+                            @for ($i = 1; $i <= 5; $i++)
+                                <i class="fa fa-star"></i>
+                            @endfor
+
+                            <h4>
+                                <a href="#">
+                                    {{ $course->title }}
+                                </a>
+                            </h4>
+
+                            <p>
+                                <span class="ti-alarm-clock"></span>
+
+                                {{ $course->duration_days }} Hari
+                            </p>
+
+                            <div class="price">
+
+                                Rp {{ number_format($course->price, 0, ',', '.') }}
+
+                            </div>
+
                         </div>
-                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                            class="fa fa-star"></i><i class="fa fa-star"></i>
-                        <h4><a href="course.html">Paket A</a></h4>
-                        <p><span class="ti-alarm-clock"> </span>Online & Offline</p>
-                        <div class="price">Jenjang SD & Sederajat</div>
+
                     </div>
-                </div><!-- END COL -->
-                <div class="col-lg-4 col-sm-6 col-xs-12">
-                    <div class="single_course">
-                        <div class="single_c_img">
-                            <img src="{{ asset('frontend/assets/img/course/2.png') }}" class="img-fluid"
-                                alt="course-image" />
-                        </div>
-                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                            class="fa fa-star"></i><i class="fa fa-star"></i>
-                        <h4><a href="course.html">Paket B</a></h4>
-                        <p><span class="ti-alarm-clock"> </span>Online & Offline</p>
-                        <div class="price">Jenjang SMP & Sederajat</div>
-                    </div>
-                </div><!-- END COL -->
-                <div class="col-lg-4 col-sm-6 col-xs-12">
-                    <div class="single_course">
-                        <div class="single_c_img">
-                            <img src="{{ asset('frontend/assets/img/course/3.png') }}" class="img-fluid"
-                                alt="course-image" />
-                        </div>
-                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                            class="fa fa-star"></i><i class="fa fa-star"></i>
-                        <h4><a href="course.html">Paket C</a></h4>
-                        <p><span class="ti-alarm-clock"> </span>Online & Offline</p>
-                        <div class="price">Jenjang SMA & Sederajat</div>
-                    </div>
-                </div><!-- END COL -->
+                @endforeach
 
             </div><!--- END ROW -->
         </div><!--- END CONTAINER -->
     </section>
     <!-- END COURSE -->
     <!-- START COURSE -->
-    <section class=" section-padding" style="background-image: url('{{ asset('frontend/assets/img/bg/background4.png') }}'); background-size: cover; background-position: center center;"
-        >
+    <section class=" section-padding"
+        style="background-image: url('{{ asset('frontend/assets/img/bg/background4.png') }}'); background-size: cover; background-position: center center;">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-sm-6 col-xs-12">
-                    <div class="section-title">
-                        <h2>Jasa yang tersedia <br><b>di Aprila</b>.</h2>
-                    </div>
-                </div><!--- END COL -->
-                <div class="col-lg-4 col-sm-6 col-xs-12">
-                    <div class="cour_btn">
-                        <a href="course.html" class="btn_one">Daftar Sekarang <i class="ti-arrow-top-right"></i></a>
-                    </div>
-                </div><!--- END COL -->
-            </div><!--- END ROW -->
-            <div class="row">
-                <div class="col-lg-4 col-sm-6 col-xs-12">
-                    <div class="single_course">
-                        <div class="single_c_img">
-                            <img src="{{ asset('frontend/assets/img/course/1.png') }}" class="img-fluid"
-                                alt="course-image" />
+
+                @forelse($jasas as $jasa)
+                    <div class="col-lg-4 col-md-6 mb-4">
+
+                        <div class="single_course h-100">
+
+                            <div class="single_c_img">
+
+                                @if ($jasa->gambar)
+                                    <img src="{{ asset('storage/' . $jasa->gambar) }}" class="img-fluid"
+                                        alt="{{ $jasa->nama }}">
+                                @else
+                                    <img src="{{ asset('frontend/assets/img/course/default.jpg') }}" class="img-fluid"
+                                        alt="Default">
+                                @endif
+
+                            </div>
+
+                            @if ($jasa->unggulan)
+                                <span class="badge bg-warning text-dark mb-2">
+                                    ⭐ Jasa Unggulan
+                                </span>
+                            @endif
+
+                            <h4>
+                                <a href="#">
+                                    {{ $jasa->nama }}
+                                </a>
+                            </h4>
+
+                            <p>
+
+                                {{ \Illuminate\Support\Str::limit($jasa->deskripsi_singkat, 100) }}
+
+                            </p>
+
+                            <p class="mb-2">
+
+                                <span class="ti-briefcase"></span>
+
+                                {{ $jasa->kategori }}
+
+                            </p>
+
+                            <p class="mb-3">
+
+                                <span class="ti-time"></span>
+
+                                {{ $jasa->estimasi_pengerjaan }}
+
+                            </p>
+
+                            <div class="price">
+
+                                @if ($jasa->harga_mulai)
+                                    Mulai dari
+
+                                    <strong>
+
+                                        Rp {{ number_format($jasa->harga_mulai, 0, ',', '.') }}
+
+                                    </strong>
+
+                                    @if ($jasa->satuan_harga)
+                                        / {{ $jasa->satuan_harga }}
+                                    @endif
+                                @else
+                                    Hubungi Kami
+                                @endif
+
+                            </div>
+
                         </div>
-                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                            class="fa fa-star"></i><i class="fa fa-star"></i>
-                        <h4><a href="course.html">Paket A</a></h4>
-                        <p><span class="ti-alarm-clock"> </span>Online & Offline</p>
-                        <div class="price">Jenjang SD & Sederajat</div>
+
                     </div>
-                </div><!-- END COL -->
-                <div class="col-lg-4 col-sm-6 col-xs-12">
-                    <div class="single_course">
-                        <div class="single_c_img">
-                            <img src="{{ asset('frontend/assets/img/course/2.png') }}" class="img-fluid"
-                                alt="course-image" />
+
+                @empty
+
+                    <div class="col-12">
+
+                        <div class="alert alert-info text-center">
+
+                            Belum ada data jasa.
+
                         </div>
-                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                            class="fa fa-star"></i><i class="fa fa-star"></i>
-                        <h4><a href="course.html">Paket B</a></h4>
-                        <p><span class="ti-alarm-clock"> </span>Online & Offline</p>
-                        <div class="price">Jenjang SMP & Sederajat</div>
+
                     </div>
-                </div><!-- END COL -->
-                <div class="col-lg-4 col-sm-6 col-xs-12">
-                    <div class="single_course">
-                        <div class="single_c_img">
-                            <img src="{{ asset('frontend/assets/img/course/3.png') }}" class="img-fluid"
-                                alt="course-image" />
-                        </div>
-                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                            class="fa fa-star"></i><i class="fa fa-star"></i>
-                        <h4><a href="course.html">Paket C</a></h4>
-                        <p><span class="ti-alarm-clock"> </span>Online & Offline</p>
-                        <div class="price">Jenjang SMA & Sederajat</div>
-                    </div>
-                </div><!-- END COL -->
+                @endforelse 
 
             </div><!--- END ROW -->
         </div><!--- END CONTAINER -->
     </section>
     <!-- END COURSE -->
-
 @endsection

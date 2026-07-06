@@ -7,6 +7,7 @@ use App\Models\Award;
 use App\Models\Berita;
 use App\Models\Course;
 use App\Models\Instructor;
+use App\Models\Testimoni;
 
 class HomeController extends Controller
 {
@@ -24,7 +25,10 @@ class HomeController extends Controller
         $awards = Award::where('is_active', 1)
         ->orderBy('order', 'asc')
         ->get();
+        $testimonis = Testimoni::where('is_active', true)
+        ->orderBy('urutan')
+        ->get();
 
-        return view('welcome', compact('beritaTerbaru', 'courses', 'teams','awards'));
+        return view('welcome', compact('beritaTerbaru', 'courses', 'teams','awards','testimonis'));
     }
 }

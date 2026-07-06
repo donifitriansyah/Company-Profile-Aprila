@@ -376,41 +376,38 @@
     <!-- END WHY CHOOSE US -->
 
     <section class="awards section-padding"
-    style="background-image: url('{{ asset('frontend/assets/img/bg/background3.png') }}'); background-size: cover; background-position: center center;">
+        style="background-image: url('{{ asset('frontend/assets/img/bg/background3.png') }}'); background-size: cover; background-position: center center;">
 
-    <div class="container">
+        <div class="container">
 
-        <div class="section-title text-center mb-5">
-            <h2>Prestasi Aprila</h2>
-            <p>Berikut adalah prestasi - prestasi yang pernah diraih Aprila.</p>
+            <div class="section-title text-center mb-5">
+                <h2>Prestasi Aprila</h2>
+                <p>Berikut adalah prestasi - prestasi yang pernah diraih Aprila.</p>
+            </div>
+
+            <div class="awards-carousel owl-carousel owl-theme">
+
+                @foreach ($awards as $award)
+                    <div class="award-card">
+
+                        {{-- IMAGE --}}
+                        <img src="{{ asset('storage/' . $award->image) }}" alt="{{ $award->title }}">
+
+                        {{-- TITLE --}}
+                        <h4>{{ $award->title }}</h4>
+
+                        {{-- INSTITUTION --}}
+                        <p class="award-desc">
+                            {{ $award->institution }}
+                        </p>
+
+                    </div>
+                @endforeach
+
+            </div>
+
         </div>
-
-        <div class="awards-carousel owl-carousel owl-theme">
-
-            @foreach($awards as $award)
-
-                <div class="award-card">
-
-                    {{-- IMAGE --}}
-                    <img src="{{ asset('storage/'.$award->image) }}"
-                         alt="{{ $award->title }}">
-
-                    {{-- TITLE --}}
-                    <h4>{{ $award->title }}</h4>
-
-                    {{-- INSTITUTION --}}
-                    <p class="award-desc">
-                        {{ $award->institution }}
-                    </p>
-
-                </div>
-
-            @endforeach
-
-        </div>
-
-    </div>
-</section>
+    </section>
 
     <!-- START TESTIMONIALS -->
     <section class=" section-padding" style=" background-size: cover; background-position: center center;">
@@ -426,96 +423,53 @@
                 </div><!-- END COL -->
                 <div class="col-lg-6 col-sm-12 col-xs-12">
                     <div id="testimonial-slider" class="owl-carousel">
-                        <div class="testimonial">
-                            <img src="assets/img/quote.png" alt="" />
-                            <div class="testimonial_content">
-                                <i class="ti-star"></i>
-                                <i class="ti-star"></i>
-                                <i class="ti-star"></i>
-                                <i class="ti-star"></i>
-                                <i class="ti-star"></i>
-                                <p>Aqestic optio amet a ququam saepe aliquid voluate dicta fuga dolor saerror sed earum
-                                    a magni soluta quam minus dolor dolor sed earum a magni soluta autem dolor error
-                                    error sit quam minus sint rem a rerum dolobus veritatis delectus.</p>
+
+                        @foreach ($testimonis as $testimoni)
+                            <div class="testimonial">
+
+                                <img src="{{ asset('frontend/assets/img/quote.png') }}" alt="Quote" />
+
+                                <div class="testimonial_content">
+
+                                    @for ($i = 1; $i <= 5; $i++)
+                                        @if ($i <= $testimoni->rating)
+                                            <i class="ti-star"></i>
+                                        @else
+                                            <i class="ti-star" style="color:#ddd"></i>
+                                        @endif
+                                    @endfor
+
+                                    <p>
+                                        {{ $testimoni->isi_testimoni }}
+                                    </p>
+
+                                </div>
+
+                                <div class="testi_pic_title">
+
+                                    @if ($testimoni->foto)
+                                        <img src="{{ asset('storage/' . $testimoni->foto) }}"
+                                            alt="{{ $testimoni->nama }}">
+                                    @else
+                                        <img src="{{ asset('frontend/assets/img/default-user.png') }}" alt="Default">
+                                    @endif
+
+                                    <h4>{{ $testimoni->nama }}</h4>
+
+                                    <p>
+                                        {{ $testimoni->jabatan }}
+
+                                        @if ($testimoni->instansi)
+                                            <br>
+                                            {{ $testimoni->instansi }}
+                                        @endif
+                                    </p>
+
+                                </div>
+
                             </div>
-                            <div class="testi_pic_title">
-                                <img src="assets/img/testimonial/1.png" alt="">
-                                <h4>Ajmain Adil</h4>
-                                <p>Groton Inc</p>
-                            </div>
-                        </div><!-- END TESTIMONIAL -->
-                        <div class="testimonial">
-                            <img src="assets/img/quote.png" alt="" />
-                            <div class="testimonial_content">
-                                <i class="ti-star"></i>
-                                <i class="ti-star"></i>
-                                <i class="ti-star"></i>
-                                <i class="ti-star"></i>
-                                <i class="ti-star"></i>
-                                <p>Aqestic optio amet a ququam saepe aliquid voluate dicta fuga dolor saerror sed earum
-                                    a magni soluta quam minus dolor dolor sed earum a magni soluta autem dolor error
-                                    error sit quam minus sint rem a rerum dolobus veritatis delectus.</p>
-                            </div>
-                            <div class="testi_pic_title">
-                                <img src="assets/img/testimonial/2.png" alt="">
-                                <h4>Sharukh Khan</h4>
-                                <p>Red Chili Inc</p>
-                            </div>
-                        </div><!-- END TESTIMONIAL -->
-                        <div class="testimonial">
-                            <img src="assets/img/quote.png" alt="" />
-                            <div class="testimonial_content">
-                                <i class="ti-star"></i>
-                                <i class="ti-star"></i>
-                                <i class="ti-star"></i>
-                                <i class="ti-star"></i>
-                                <i class="ti-star"></i>
-                                <p>Aqestic optio amet a ququam saepe aliquid voluate dicta fuga dolor saerror sed earum
-                                    a magni soluta quam minus dolor dolor sed earum a magni soluta autem dolor error
-                                    error sit quam minus sint rem a rerum dolobus veritatis delectus.</p>
-                            </div>
-                            <div class="testi_pic_title">
-                                <img src="assets/img/testimonial/3.png" alt="">
-                                <h4>Anushka sharma</h4>
-                                <p>Naika Company</p>
-                            </div>
-                        </div><!-- END TESTIMONIAL -->
-                        <div class="testimonial">
-                            <img src="assets/img/quote.png" alt="" />
-                            <div class="testimonial_content">
-                                <i class="ti-star"></i>
-                                <i class="ti-star"></i>
-                                <i class="ti-star"></i>
-                                <i class="ti-star"></i>
-                                <i class="ti-star"></i>
-                                <p>Aqestic optio amet a ququam saepe aliquid voluate dicta fuga dolor saerror sed earum
-                                    a magni soluta quam minus dolor dolor sed earum a magni soluta autem dolor error
-                                    error sit quam minus sint rem a rerum dolobus veritatis delectus.</p>
-                            </div>
-                            <div class="testi_pic_title">
-                                <img src="assets/img/testimonial/4.png" alt="">
-                                <h4>Ajmain Adil</h4>
-                                <p>Groton Inc</p>
-                            </div>
-                        </div><!-- END TESTIMONIAL -->
-                        <div class="testimonial">
-                            <img src="assets/img/quote.png" alt="" />
-                            <div class="testimonial_content">
-                                <i class="ti-star"></i>
-                                <i class="ti-star"></i>
-                                <i class="ti-star"></i>
-                                <i class="ti-star"></i>
-                                <i class="ti-star"></i>
-                                <p>Aqestic optio amet a ququam saepe aliquid voluate dicta fuga dolor saerror sed earum
-                                    a magni soluta quam minus dolor dolor sed earum a magni soluta autem dolor error
-                                    error sit quam minus sint rem a rerum dolobus veritatis delectus.</p>
-                            </div>
-                            <div class="testi_pic_title">
-                                <img src="assets/img/testimonial/5.png" alt="">
-                                <h4>Ajmain Adil</h4>
-                                <p>Groton Inc</p>
-                            </div>
-                        </div><!-- END TESTIMONIAL -->
+                        @endforeach
+
                     </div><!-- END TESTIMONIAL SLIDER -->
                 </div><!-- END COL -->
             </div><!--- END ROW -->
