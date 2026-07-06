@@ -316,7 +316,7 @@ ul {
 }
 
 .site-logo img {
-    margin-left: 100px;
+
     max-width: 100%;
 }
 
@@ -716,6 +716,12 @@ ul {
     .hero-text-img img {
         display: block;
         width: 80%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .hero-text-img {
+        display: none !important;
     }
 }
 
