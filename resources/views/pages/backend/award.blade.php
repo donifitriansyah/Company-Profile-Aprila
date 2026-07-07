@@ -76,8 +76,12 @@
                                         </td>
 
                                         <td>
-                                            <a href="{{ route('award.edit', $award->id) }}"
-                                                class="btn btn-warning btn-sm">Edit</a>
+
+
+                                            <button class="btn btn-warning" data-bs-toggle="modal"
+                                                data-bs-target="#modalEdit{{ $award->id }}">
+                                                Edit
+                                            </button>
 
                                             <form action="{{ route('award.destroy', $award->id) }}" method="POST"
                                                 class="d-inline">
@@ -113,10 +117,10 @@
                                                         <input type="text" name="title" class="form-control mb-2"
                                                             value="{{ $award->title }}" required>
 
-                                                        <input type="text" name="institution" class="form-control mb-2"
+                                                        <input type="text" name="institution" class="form-control mb-2" placeholder="Institusi"
                                                             value="{{ $award->institution }}">
 
-                                                        <textarea name="description" class="form-control mb-2">{{ $award->description }}</textarea>
+                                                        <textarea name="description" class="form-control mb-2" placeholder="Deskripsi">{{ $award->description }}</textarea>
 
                                                         <input type="number" name="order" class="form-control mb-2"
                                                             value="{{ $award->order }}">

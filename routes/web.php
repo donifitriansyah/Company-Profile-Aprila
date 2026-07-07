@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\BeritaController;
+use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\GaleriBeritaController;
 use App\Http\Controllers\Admin\JasaController;
 use App\Http\Controllers\Admin\KategoriBeritaController;
@@ -49,6 +50,10 @@ Route::get('/kontak-kami', function () {
 Route::get('/detail-kursus', function () {
     return view('pages.frontend.detail-kursus');
 })->name('detail-kursus');
+
+Route::get('/detail-paket-a', function () {
+    return view('pages.frontend.course.detail-paket-a');
+})->name('detail-paket-a');
 
 Route::get('/berita', [FrontendBeritaController::class, 'index'])
     ->name('berita');
@@ -118,6 +123,8 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::resource('award', PrestasiController::class);
+
+    Route::resource('admin-klien', ClientController::class);
 
     Route::resource('admin-course', CourseController::class);
 

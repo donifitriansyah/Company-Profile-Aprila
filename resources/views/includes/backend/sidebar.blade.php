@@ -41,12 +41,12 @@
                         </li>
                     </ul>
                 </li>
-                <li class="sidebar-item {{ request()->routeIs('admin-course.index') ? 'active' : '' }}">
+                {{-- <li class="sidebar-item {{ request()->routeIs('admin-course.index') ? 'active' : '' }}">
                     <a href="{{ route('admin-course.index') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Kursus</span>
                     </a>
-                </li>
+                </li> --}}
                 <li class="sidebar-item {{ request()->routeIs('admin-instructor.index') ? 'active' : '' }}">
                     <a href="{{ route('admin-instructor.index') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
@@ -65,12 +65,18 @@
                         <span>Testimoni</span>
                     </a>
                 </li>
-                <li class="sidebar-item {{ request()->routeIs('admin-jasa.index') ? 'active' : '' }}">
+                <li class="sidebar-item {{ request()->routeIs('admin-klien.index') ? 'active' : '' }}">
+                    <a href="{{ route('admin-klien.index') }}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Klien</span>
+                    </a>
+                </li>
+                {{-- <li class="sidebar-item {{ request()->routeIs('admin-jasa.index') ? 'active' : '' }}">
                     <a href="{{ route('admin-jasa.index') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Jasa</span>
                     </a>
-                </li>
+                </li> --}}
 
 
                 <li class="sidebar-item">

@@ -23,11 +23,11 @@
                                 <li><a href="{{ route('pkbm-aprila') }}">PKBM</a></li>
                                 <li><a href="https://klinikbisnis.aprila.id/">Klinik Bisnis</a></li>
                                 {{-- <li><a href="course_details.html">Production House</a></li> --}}
-                                <li><a href="{{ route('kelas-kursus-dan-jasa') }}">Kelas Kursus dan Jasa</a></li>
+                                <li><a href="{{ route('kelas-kursus-dan-jasa') }}">LK-LPK Aprila</a></li>
                             </ul>
                         </li>
 
-                        
+
                         <li><a href="{{ route('berita') }}">Berita</a></li>
                         <li><a href="{{ route('kontak-kami') }}">Kontak</a></li>
                         <li><a href="https://lms.aprila.id/login/index.php">LMS</a></li>

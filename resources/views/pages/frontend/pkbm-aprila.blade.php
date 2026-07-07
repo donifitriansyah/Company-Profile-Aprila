@@ -73,50 +73,276 @@
                 </div><!--- END COL -->
                 <div class="col-lg-4 col-sm-6 col-xs-12">
                     <div class="cour_btn">
-                        <a href="course.html" class="btn_one">Daftar Sekarang <i class="ti-arrow-top-right"></i></a>
+                        {{-- <a href="course.html" class="btn_one">Daftar Sekarang <i class="ti-arrow-top-right"></i></a> --}}
                     </div>
                 </div><!--- END COL -->
             </div><!--- END ROW -->
             <div class="row">
-                <div class="col-lg-4 col-sm-6 col-xs-12">
+                <div class="course-carousel owl-carousel owl-theme">
+                    {{-- Paket A --}}
                     <div class="single_course">
+
                         <div class="single_c_img">
-                            <img src="{{ asset('frontend/assets/img/course/1.png') }}" class="img-fluid"
-                                alt="course-image" />
+                            <img src="{{ asset('frontend/assets/img/course/Paket A.png') }}" class="img-fluid"
+                                alt="course-image">
+                            <span>PKBM</span>
                         </div>
-                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                            class="fa fa-star"></i><i class="fa fa-star"></i>
-                        <h4><a href="{{ route('detail-kursus') }}">Paket A</a></h4>
-                        <p><span class="ti-alarm-clock"> </span>Online & Offline</p>
-                        <div class="price">Jenjang SD & Sederajat</div>
+
+
+                        <div class="course-rating">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                        </div>
+
+
+                        <h4>
+                            <a href="{{ route('detail-paket-a') }}">Paket A - Setara SD</a>
+                        </h4>
+
+
+                        <ul class="course-info">
+                            <li>
+                                <i class="ti-book"></i>
+                                <span>2–3 Hari / Minggu</span>
+                            </li>
+
+                            <li>
+                                <i class="ti-alarm-clock"></i>
+                                <span>60–90 Menit / Pertemuan</span>
+                            </li>
+
+                            <li>
+                                <i class="ti-calendar"></i>
+                                <span>Minggu & Senin</span>
+                            </li>
+
+                            <li>
+                                <i class="ti-desktop"></i>
+                                <span>Blended Learning</span>
+                            </li>
+
+                            <li>
+                                <i class="ti-user"></i>
+                                <span>Pendampingan Tutor</span>
+                            </li>
+                        </ul>
+
+
+                        <div class="course-price">
+
+                            <div class="price-item">
+                                <span>Pendaftaran</span>
+                                <strong>Rp250.000</strong>
+                            </div>
+
+                            <div class="price-item">
+                                <span>Pendidikan Mandiri</span>
+                                <strong>Rp1.450.000</strong>
+                            </div>
+
+                            <div class="price-item">
+                                <span>SPP / Bulan</span>
+                                <strong>Rp100.000</strong>
+                            </div>
+
+
+
+                            <p>
+                                Usia <strong>24 tahun ke bawah</strong> GRATIS (S&K Berlaku)
+                            </p>
+
+                            <p>
+                                Usia <strong>24 tahun ke atas</strong> GRATIS bagi peserta
+                                yang tidak mampu
+                            </p>
+
+                        </div>
+
+
+                        <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
+                            Lihat Detail
+                        </a>
+
                     </div>
-                </div><!-- END COL -->
-                <div class="col-lg-4 col-sm-6 col-xs-12">
+                    {{-- Paket B --}}
                     <div class="single_course">
+
                         <div class="single_c_img">
-                            <img src="{{ asset('frontend/assets/img/course/2.png') }}" class="img-fluid"
-                                alt="course-image" />
+                            <img src="{{ asset('frontend/assets/img/course/Paket B.png') }}" class="img-fluid"
+                                alt="course-image">
+                            <span>PKBM</span>
                         </div>
-                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                            class="fa fa-star"></i><i class="fa fa-star"></i>
-                        <h4><a href="course.html">Paket B</a></h4>
-                        <p><span class="ti-alarm-clock"> </span>Online & Offline</p>
-                        <div class="price">Jenjang SMP & Sederajat</div>
+
+
+                        <div class="course-rating">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                        </div>
+
+
+                        <h4>
+                            <a href="#">Paket B - Setara SMP</a>
+                        </h4>
+
+
+                        <ul class="course-info">
+                            <li>
+                                <i class="ti-book"></i>
+                                <span>2–3 Hari / Minggu</span>
+                            </li>
+
+                            <li>
+                                <i class="ti-alarm-clock"></i>
+                                <span>60–90 Menit / Pertemuan</span>
+                            </li>
+
+                            <li>
+                                <i class="ti-calendar"></i>
+                                <span>Minggu & Senin</span>
+                            </li>
+
+                            <li>
+                                <i class="ti-desktop"></i>
+                                <span>Blended Learning</span>
+                            </li>
+
+                            <li>
+                                <i class="ti-user"></i>
+                                <span>Pendampingan Tutor</span>
+                            </li>
+                        </ul>
+
+
+                        <div class="course-price">
+
+                            <div class="price-item">
+                                <span>Pendaftaran</span>
+                                <strong>Rp250.000</strong>
+                            </div>
+
+                            <div class="price-item">
+                                <span>Pendidikan Mandiri</span>
+                                <strong>Rp1.850.000</strong>
+                            </div>
+
+                            <div class="price-item">
+                                <span>SPP / Bulan</span>
+                                <strong>Rp100.000</strong>
+                            </div>
+
+                            <p>
+                                Usia <strong>24 tahun ke bawah</strong> GRATIS (S&K Berlaku)
+                            </p>
+
+                            <p>
+                                Usia <strong>24 tahun ke atas</strong> GRATIS bagi peserta
+                                yang tidak mampu
+                            </p>
+
+                        </div>
+
+
+                        <a href="#" class="btn btn-primary btn-block">
+                            Lihat Detail
+                        </a>
+
                     </div>
-                </div><!-- END COL -->
-                <div class="col-lg-4 col-sm-6 col-xs-12">
+                    {{-- Paket C --}}
                     <div class="single_course">
+
                         <div class="single_c_img">
-                            <img src="{{ asset('frontend/assets/img/course/3.png') }}" class="img-fluid"
-                                alt="course-image" />
+                            <img src="{{ asset('frontend/assets/img/course/Paket C.png') }}" class="img-fluid"
+                                alt="course-image">
+                            <span>PKBM</span>
                         </div>
-                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                            class="fa fa-star"></i><i class="fa fa-star"></i>
-                        <h4><a href="course.html">Paket C</a></h4>
-                        <p><span class="ti-alarm-clock"> </span>Online & Offline</p>
-                        <div class="price">Jenjang SMA & Sederajat</div>
+
+
+                        <div class="course-rating">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                        </div>
+
+
+                        <h4>
+                            <a href="#">Paket C - Setara SMA</a>
+                        </h4>
+
+
+                        <ul class="course-info">
+                            <li>
+                                <i class="ti-book"></i>
+                                <span>2–3 Hari / Minggu</span>
+                            </li>
+
+                            <li>
+                                <i class="ti-alarm-clock"></i>
+                                <span>60–90 Menit / Pertemuan</span>
+                            </li>
+
+                            <li>
+                                <i class="ti-calendar"></i>
+                                <span>Minggu & Senin</span>
+                            </li>
+
+                            <li>
+                                <i class="ti-desktop"></i>
+                                <span>Blended Learning</span>
+                            </li>
+
+                            <li>
+                                <i class="ti-user"></i>
+                                <span>Pendampingan Tutor</span>
+                            </li>
+                        </ul>
+
+
+                        <div class="course-price">
+
+                            <div class="price-item">
+                                <span>Pendaftaran</span>
+                                <strong>Rp250.000</strong>
+                            </div>
+
+                            <div class="price-item">
+                                <span>Pendidikan Mandiri</span>
+                                <strong>Rp2.250.000</strong>
+                            </div>
+
+                            <div class="price-item">
+                                <span>SPP / Bulan</span>
+                                <strong>Rp150.000</strong>
+                            </div>
+
+                            <p>
+                                Usia <strong>24 tahun ke bawah</strong> GRATIS (S&K Berlaku)
+                            </p>
+
+                            <p>
+                                Usia <strong>24 tahun ke atas</strong> GRATIS bagi peserta
+                                yang tidak mampu
+                            </p>
+
+                        </div>
+
+
+                        <a href="#" class="btn btn-primary btn-block">
+                            Lihat Detail
+                        </a>
+
                     </div>
-                </div><!-- END COL -->
+
+
+
+                </div>
 
             </div><!--- END ROW -->
         </div><!--- END CONTAINER -->
@@ -169,7 +395,7 @@
     <!-- END TEAM -->
 
     <!-- START TESTIMONIALS -->
-    <section class=" section-padding"
+    {{-- <section class=" section-padding"
         style="background-image: url('{{ asset('frontend/assets/img/bg/background3.png') }}'); background-size: cover; background-position: center center;">
         <div class="container">
             <div class="section-title">
@@ -277,6 +503,6 @@
                 </div><!-- END COL -->
             </div><!--- END ROW -->
         </div><!--- END CONTAINER -->
-    </section>
+    </section> --}}
     <!-- END TESTIMONIALS -->
 @endsection

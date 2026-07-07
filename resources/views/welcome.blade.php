@@ -175,21 +175,21 @@
                     <div class="single-counter">
                         <span class="ti-folder sc_one"></span>
                         <h2 class="counter-num">134</h2>
-                        <p>Our Online Course</p>
+                        <p>Kursus</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-xs-12">
                     <div class="single-counter">
                         <span class="ti-medall-alt sc_two"></span>
                         <h2 class="counter-num">299</h2>
-                        <p>Academic Programs</p>
+                        <p>Program Akademik</p>
                     </div>
                 </div><!-- END COL -->
                 <div class="col-lg-3 col-sm-6 col-xs-12">
                     <div class="single-counter">
                         <span class="ti-id-badge sc_three"></span>
                         <h2 class="counter-num">684</h2>
-                        <p>Certified Students</p>
+                        <p>Siswa Bersertifikat</p>
                     </div>
                 </div><!-- END COL -->
                 <div class="col-lg-3 col-sm-6 col-xs-12">
@@ -495,29 +495,21 @@
 
                     <div class="client-carousel">
 
-                        <div class="client-item">
-                            <img src="{{ asset('frontend/assets/img/clients/1.png') }}" alt="">
-                        </div>
+                        @foreach ($clients as $client)
+                            <div class="client-item">
 
-                        <div class="client-item">
-                            <img src="{{ asset('frontend/assets/img/clients/2.png') }}" alt="">
-                        </div>
+                                @if ($client->website)
+                                    <a href="{{ $client->website }}" target="_blank" rel="noopener noreferrer">
 
-                        <div class="client-item">
-                            <img src="{{ asset('frontend/assets/img/clients/3.png') }}" alt="">
-                        </div>
+                                        <img src="{{ asset('storage/' . $client->logo) }}" alt="{{ $client->name }}">
 
-                        <div class="client-item">
-                            <img src="{{ asset('frontend/assets/img/clients/4.png') }}" alt="">
-                        </div>
+                                    </a>
+                                @else
+                                    <img src="{{ asset('storage/' . $client->logo) }}" alt="{{ $client->name }}">
+                                @endif
 
-                        <div class="client-item">
-                            <img src="{{ asset('frontend/assets/img/clients/5.png') }}" alt="">
-                        </div>
-
-                        <div class="client-item">
-                            <img src="{{ asset('frontend/assets/img/clients/6.png') }}" alt="">
-                        </div>
+                            </div>
+                        @endforeach
 
                     </div>
 
@@ -536,62 +528,656 @@
             <div class="row">
                 <div class="col-lg-8 col-sm-6 col-xs-12">
                     <div class="section-title">
-                        <h2>Ayo Bergabung dengan Kelas Paket, <br />Kursus dan Pelatihan.</h2>
+                        <h2>Ayo Bergabung dengan Kelas PKBM, <br />Kursus dan Pelatihan.</h2>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 col-xs-12">
-                    <div class="cour_btn text-end">
-                        <a href="course.html" class="btn_one">View all Courses <i class="ti-arrow-top-right"></i></a>
-                    </div>
+                    {{-- <div class="cour_btn text-end">
+                        <a href="course.html" class="btn_one">Lihat Semua <i class="ti-arrow-top-right"></i></a>
+                    </div> --}}
                 </div>
             </div>
 
             <!-- Course Carousel -->
             <div class="course-carousel owl-carousel owl-theme">
+                {{-- Paket A --}}
+                <div class="single_course">
 
-                @foreach ($courses as $course)
-                    <div class="single_course">
+                    <div class="single_c_img">
+                        <img src="{{ asset('frontend/assets/img/course/Paket A.png') }}" class="img-fluid"
+                            alt="course-image">
+                        <span>PKBM</span>
+                    </div>
 
-                        <div class="single_c_img">
 
-                            <img src="{{ asset('storage/' . $course->image) }}" class="img-fluid"
-                                alt="{{ $course->title }}" />
+                    <div class="course-rating">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                    </div>
 
+
+                    <h4>
+                        <a href="{{ route('detail-paket-a') }}">Paket A - Setara SD</a>
+                    </h4>
+
+
+                    <ul class="course-info">
+                        <li>
+                            <i class="ti-book"></i>
+                            <span>2–3 Hari / Minggu</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-alarm-clock"></i>
+                            <span>60–90 Menit / Pertemuan</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-calendar"></i>
+                            <span>Minggu & Senin</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-desktop"></i>
+                            <span>Blended Learning</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-user"></i>
+                            <span>Pendampingan Tutor</span>
+                        </li>
+                    </ul>
+
+
+                    <div class="course-price">
+
+                        <div class="price-item">
+                            <span>Pendaftaran</span>
+                            <strong>Rp250.000</strong>
                         </div>
 
-                        {{-- rating dummy (bisa diganti nanti dari DB) --}}
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
+                        <div class="price-item">
+                            <span>Pendidikan Mandiri</span>
+                            <strong>Rp1.450.000</strong>
+                        </div>
 
-                        <h4>
-                            <a href="{{ route('detail-courses.show', $course->id) }}">
-                                {{ $course->title }}
-                            </a>
-                        </h4>
+                        <div class="price-item">
+                            <span>SPP / Bulan</span>
+                            <strong>Rp100.000</strong>
+                        </div>
+
+
 
                         <p>
-                            <span class="ti-book"></span>
-                            Online & Offline
+                            Usia <strong>24 tahun ke bawah</strong> GRATIS (S&K Berlaku)
                         </p>
 
                         <p>
-                            <span class="ti-calendar"></span>
-                            {{ $course->duration_days }} Hari
+                            Usia <strong>24 tahun ke atas</strong> GRATIS bagi peserta
+                            yang tidak mampu
                         </p>
 
-                        <div class="price">
-                            Rp {{ number_format($course->price, 0, ',', '.') }}
+                    </div>
+
+
+                    <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
+                        Lihat Detail
+                    </a>
+
+                </div>
+                {{-- Paket B --}}
+                <div class="single_course">
+
+                    <div class="single_c_img">
+                        <img src="{{ asset('frontend/assets/img/course/Paket B.png') }}" class="img-fluid"
+                            alt="course-image">
+                        <span>PKBM</span>
+                    </div>
+
+
+                    <div class="course-rating">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                    </div>
+
+
+                    <h4>
+                        <a href="#">Paket B - Setara SMP</a>
+                    </h4>
+
+
+                    <ul class="course-info">
+                        <li>
+                            <i class="ti-book"></i>
+                            <span>2–3 Hari / Minggu</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-alarm-clock"></i>
+                            <span>60–90 Menit / Pertemuan</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-calendar"></i>
+                            <span>Minggu & Senin</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-desktop"></i>
+                            <span>Blended Learning</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-user"></i>
+                            <span>Pendampingan Tutor</span>
+                        </li>
+                    </ul>
+
+
+                    <div class="course-price">
+
+                        <div class="price-item">
+                            <span>Pendaftaran</span>
+                            <strong>Rp250.000</strong>
+                        </div>
+
+                        <div class="price-item">
+                            <span>Pendidikan Mandiri</span>
+                            <strong>Rp1.850.000</strong>
+                        </div>
+
+                        <div class="price-item">
+                            <span>SPP / Bulan</span>
+                            <strong>Rp100.000</strong>
+                        </div>
+
+                        <p>
+                            Usia <strong>24 tahun ke bawah</strong> GRATIS (S&K Berlaku)
+                        </p>
+
+                        <p>
+                            Usia <strong>24 tahun ke atas</strong> GRATIS bagi peserta
+                            yang tidak mampu
+                        </p>
+
+                    </div>
+
+
+                    <a href="#" class="btn btn-primary btn-block">
+                        Lihat Detail
+                    </a>
+
+                </div>
+                {{-- Paket C --}}
+                <div class="single_course">
+
+                    <div class="single_c_img">
+                        <img src="{{ asset('frontend/assets/img/course/Paket C.png') }}" class="img-fluid"
+                            alt="course-image">
+                        <span>PKBM</span>
+                    </div>
+
+
+                    <div class="course-rating">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                    </div>
+
+
+                    <h4>
+                        <a href="#">Paket C - Setara SMA</a>
+                    </h4>
+
+
+                    <ul class="course-info">
+                        <li>
+                            <i class="ti-book"></i>
+                            <span>2–3 Hari / Minggu</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-alarm-clock"></i>
+                            <span>60–90 Menit / Pertemuan</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-calendar"></i>
+                            <span>Minggu & Senin</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-desktop"></i>
+                            <span>Blended Learning</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-user"></i>
+                            <span>Pendampingan Tutor</span>
+                        </li>
+                    </ul>
+
+
+                    <div class="course-price">
+
+                        <div class="price-item">
+                            <span>Pendaftaran</span>
+                            <strong>Rp250.000</strong>
+                        </div>
+
+                        <div class="price-item">
+                            <span>Pendidikan Mandiri</span>
+                            <strong>Rp2.250.000</strong>
+                        </div>
+
+                        <div class="price-item">
+                            <span>SPP / Bulan</span>
+                            <strong>Rp150.000</strong>
+                        </div>
+
+                        <p>
+                            Usia <strong>24 tahun ke bawah</strong> GRATIS (S&K Berlaku)
+                        </p>
+
+                        <p>
+                            Usia <strong>24 tahun ke atas</strong> GRATIS bagi peserta
+                            yang tidak mampu
+                        </p>
+
+                    </div>
+
+
+                    <a href="#" class="btn btn-primary btn-block">
+                        Lihat Detail
+                    </a>
+
+                </div>
+                {{-- Aplikasi Perkantoran --}}
+                <div class="single_course">
+
+                    <div class="single_c_img">
+                        <img src="{{ asset('frontend/assets/img/course/Course Perkantoran.png') }}" class="img-fluid"
+                            alt="course-image">
+                        <span>Office</span>
+                    </div>
+
+
+                    <div class="course-rating">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                    </div>
+
+
+                    <h4>
+                        <a href="{{ route('detail-paket-a') }}">APLIKASI PERKANTORAN</a>
+                    </h4>
+                    <p>Menguasai berbagai perangkat lunak esensial untuk produktivitas kerja. </p>
+
+
+                    <ul class="course-info">
+                        <li>
+                            <i class="ti-book"></i>
+                            <span>10 Pertemuan</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-alarm-clock"></i>
+                            <span>90 Menit / Pertemuan</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-calendar"></i>
+                            <span>2x sepekan</span>
+                        </li>
+                    </ul>
+
+
+                    <div class="course-price">
+
+                        <div class="price-item">
+                            <span>Reguler</span>
+                            <strong>Rp450.000 (Pontianak) <br> Rp350.000 (Kubu Raya)</strong>
+                        </div>
+
+                        <div class="price-item">
+                            <span>Private Pontianak</span>
+                            <strong>Rp750.000 | Rp 550.000</strong>
+                        </div>
+
+                        <div class="price-item">
+                            <span>Private Kubu Raya</span>
+                            <strong>Rp 500.000 | Rp400.000</strong>
+                        </div>
+                        <div class="price-item">
+                            <span>Private Online</span>
+                            <strong>Rp 450.000</strong>
                         </div>
 
                     </div>
-                @endforeach
+
+
+                    <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
+                        Lihat Detail
+                    </a>
+
+                </div>
+                {{-- Aplikasi Desain Grafis --}}
+                <div class="single_course">
+
+                    <div class="single_c_img">
+                        <img src="{{ asset('frontend/assets/img/course/Grafis Desain.png') }}" class="img-fluid"
+                            alt="course-image">
+                        <span>Desain Grafis</span>
+                    </div>
+
+
+                    <div class="course-rating">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                    </div>
+
+
+                    <h4>
+                        <a href="{{ route('detail-paket-a') }}">Desain Grafis</a>
+                    </h4>
+                    <p>Menciptakan desain visual menarik dengan mudah menggunakan platform Canva.</p>
+
+
+                    <ul class="course-info">
+                        <li>
+                            <i class="ti-book"></i>
+                            <span>12 Pertemuan</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-alarm-clock"></i>
+                            <span>90 Menit / Pertemuan</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-calendar"></i>
+                            <span>3x sepekan</span>
+                        </li>
+                    </ul>
+
+
+                    <div class="course-price">
+
+                        <div class="price-item">
+                            <span>Reguler</span>
+                            <strong>Rp650.000 (Pontianak) <br> Rp500.000 (Kubu Raya)</strong>
+                        </div>
+
+                        <div class="price-item">
+                            <span>Private Pontianak</span>
+                            <strong>Rp1.300.000 | Rp 1.000.000</strong>
+                        </div>
+
+                        <div class="price-item">
+                            <span>Private Kubu Raya</span>
+                            <strong>Rp 1.100.000 | Rp800.000</strong>
+                        </div>
+                        <div class="price-item">
+                            <span>Private Online</span>
+                            <strong>Rp 850.000</strong>
+                        </div>
+
+                    </div>
+
+
+                    <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
+                        Lihat Detail
+                    </a>
+
+                </div>
+                {{-- Video Editing --}}
+                <div class="single_course">
+
+                    <div class="single_c_img">
+                        <img src="{{ asset('frontend/assets/img/course/Video Editing.png') }}" class="img-fluid"
+                            alt="course-image">
+                        <span>Video Editing</span>
+                    </div>
+
+
+                    <div class="course-rating">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                    </div>
+
+
+                    <h4>
+                        <a href="{{ route('detail-paket-a') }}">Video Editing</a>
+                    </h4>
+                    <p>Menciptakan desain visual menarik dengan mudah menggunakan platform Canva.</p>
+
+
+                    <ul class="course-info">
+                        <li>
+                            <i class="ti-book"></i>
+                            <span>12 Pertemuan</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-alarm-clock"></i>
+                            <span>90 Menit / Pertemuan</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-calendar"></i>
+                            <span>3x sepekan</span>
+                        </li>
+                    </ul>
+
+
+                    <div class="course-price">
+
+                        <div class="price-item">
+                            <span>Reguler</span>
+                            <strong>Rp650.000 (Pontianak) <br> Rp500.000 (Kubu Raya)</strong>
+                        </div>
+
+                        <div class="price-item">
+                            <span>Private Pontianak</span>
+                            <strong>Rp1.300.000 | Rp 1.000.000</strong>
+                        </div>
+
+                        <div class="price-item">
+                            <span>Private Kubu Raya</span>
+                            <strong>Rp 1.100.000 | Rp800.000</strong>
+                        </div>
+                        <div class="price-item">
+                            <span>Private Online</span>
+                            <strong>Rp 850.000</strong>
+                        </div>
+
+                    </div>
+
+
+                    <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
+                        Lihat Detail
+                    </a>
+
+                </div>
+                {{-- Public Speaking --}}
+                <div class="single_course">
+
+                    <div class="single_c_img">
+                        <img src="{{ asset('frontend/assets/img/course/Public Speaking.png') }}" class="img-fluid"
+                            alt="course-image">
+                        <span>Public Speaking</span>
+                    </div>
+
+
+                    <div class="course-rating">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                    </div>
+
+
+                    <h4>
+                        <a href="{{ route('detail-paket-a') }}">Public Speaking</a>
+                    </h4>
+                    <p>Meningkatkan kepercayaan diri dan kemampuan presentasi yang efektif.</p>
+                    <ul class="course-info">
+                        <li>
+                            <i class="ti-book"></i>
+                            <span>12 Pertemuan</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-alarm-clock"></i>
+                            <span>90 Menit / Pertemuan</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-calendar"></i>
+                            <span>3x sepekan</span>
+                        </li>
+                    </ul>
+
+
+                    <div class="course-price">
+
+                        <div class="price-item">
+                            <span>Reguler</span>
+                            <strong>Rp900.000 (Pontianak) <br> Rp700.000 (Kubu Raya)</strong>
+                        </div>
+
+                        <div class="price-item">
+                            <span>Private Pontianak</span>
+                            <strong>Rp1.800.000 | Rp 1.400.000</strong>
+                        </div>
+
+                        <div class="price-item">
+                            <span>Private Kubu Raya</span>
+                            <strong>Rp 1.600.000 | Rp1.200.000</strong>
+                        </div>
+                        <div class="price-item">
+                            <span>Private Online</span>
+                            <strong>Rp 1.250.000</strong>
+                        </div>
+
+                    </div>
+
+
+                    <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
+                        Lihat Detail
+                    </a>
+
+                </div>
+                {{-- Digital Marketing --}}
+                <div class="single_course">
+
+                    <div class="single_c_img">
+                        <img src="{{ asset('frontend/assets/img/course/Digital Marketing.png') }}" class="img-fluid"
+                            alt="course-image">
+                        <span>Digital Marketing</span>
+                    </div>
+
+
+                    <div class="course-rating">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                    </div>
+
+
+                    <h4>
+                        <a href="{{ route('detail-paket-a') }}">Digital Marketing</a>
+                    </h4>
+                    <p>Memahami strategi pemasaran digital untuk menjangkau audiens lebih luas.</p>
+                    <ul class="course-info">
+                        <li>
+                            <i class="ti-book"></i>
+                            <span>12 Pertemuan</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-alarm-clock"></i>
+                            <span>90 Menit / Pertemuan</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-calendar"></i>
+                            <span>3x sepekan</span>
+                        </li>
+                    </ul>
+
+
+                    <div class="course-price">
+
+                        <div class="price-item">
+                            <span>Reguler</span>
+                            <strong>Rp650.000 (Pontianak) <br> Rp500.000 (Kubu Raya)</strong>
+                        </div>
+
+                        <div class="price-item">
+                            <span>Private Pontianak</span>
+                            <strong>Rp1.300.000 | Rp 1.000.000</strong>
+                        </div>
+
+                        <div class="price-item">
+                            <span>Private Kubu Raya</span>
+                            <strong>Rp 1.100.000 | Rp800.000</strong>
+                        </div>
+                        <div class="price-item">
+                            <span>Private Online</span>
+                            <strong>Rp 850.000</strong>
+                        </div>
+
+                    </div>
+
+
+                    <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
+                        Lihat Detail
+                    </a>
+
+                </div>
+
 
             </div>
         </div>
     </section>
+
+    <style>
+        .free-program {
+            background: #00d532;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .course-price p {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+    </style>
     <!-- END COURSE -->
     <!-- END COURSE -->
 

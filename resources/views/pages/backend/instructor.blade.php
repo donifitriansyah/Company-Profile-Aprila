@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="page-heading mb-3">
-        <h3>Data Instruktur</h3>
+        <h3>Data Instruktur dan Tim</h3>
     </div>
 
     <div class="page-content">
@@ -14,12 +14,12 @@
                 <div class="card-body d-flex justify-content-between align-items-center">
 
                     <div>
-                        <h5 class="mb-0">Data Instruktur</h5>
-                        <small class="text-muted">Kelola data Instruktur</small>
+                        <h5 class="mb-0">Data Instruktur dan Tim</h5>
+                        <small class="text-muted">Kelola data Instruktur dan Tim</small>
                     </div>
 
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCreate">
-                        + Tambah Instruktur
+                        + Tambah Tim / Instruktur
                     </button>
 
                 </div>

@@ -54,6 +54,7 @@
                             </li>
                         </ul>
 
+
                     </div>
                 </div>
             </div>
@@ -69,8 +70,7 @@
         <div class="container">
 
             <!-- HEADER -->
-            <div class="text-center mb-5 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s"
-                    data-wow-offset="0">
+            <div class="text-center mb-5 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
                 <h2 class="fw-bold">Program Pendidikan & Pelatihan</h2>
                 <p class="text-muted">
                     Aprila menyelenggarakan program pendidikan dan pelatihan untuk meningkatkan keterampilan,
@@ -82,8 +82,7 @@
             <div class="row g-4">
 
                 <!-- ===================== PAKET A ===================== -->
-                <div class="col-md-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s"
-                    data-wow-offset="0">
+                <div class="col-md-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
                     <div class="card border-0 shadow-sm h-100 program-card">
 
                         {{-- <img src="{{ asset('frontend/assets/img/program/paket-a.jpg') }}" class="card-img-top"
@@ -101,8 +100,7 @@
                 </div>
 
                 <!-- ===================== PAKET B ===================== -->
-                <div class="col-md-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s"
-                    data-wow-offset="0">
+                <div class="col-md-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
                     <div class="card border-0 shadow-sm h-100 program-card">
 
                         {{-- <img src="{{ asset('frontend/assets/img/program/paket-b.jpg') }}" class="card-img-top"
@@ -120,8 +118,7 @@
                 </div>
 
                 <!-- ===================== PAKET C ===================== -->
-                <div class="col-md-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s"
-                    data-wow-offset="0">
+                <div class="col-md-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
                     <div class="card border-0 shadow-sm h-100 program-card">
 
                         {{-- <img src="{{ asset('frontend/assets/img/program/paket-c.jpg') }}" class="card-img-top"
@@ -139,8 +136,7 @@
                 </div>
 
                 <!-- ===================== DIGITAL SKILL ===================== -->
-                <div class="col-md-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"
-                    data-wow-offset="0">
+                <div class="col-md-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" data-wow-offset="0">
                     <div class="card border-0 shadow-sm h-100 program-card">
 
                         {{-- <img src="{{ asset('frontend/assets/img/program/digital-skill.jpg') }}" class="card-img-top"
@@ -158,8 +154,7 @@
                 </div>
 
                 <!-- ===================== WIRAUSAHA ===================== -->
-                <div class="col-md-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"
-                    data-wow-offset="0">
+                <div class="col-md-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" data-wow-offset="0">
                     <div class="card border-0 shadow-sm h-100 program-card">
 
                         {{-- <img src="{{ asset('frontend/assets/img/program/entrepreneur.jpg') }}" class="card-img-top"
@@ -177,8 +172,7 @@
                 </div>
 
                 <!-- ===================== DISABILITAS ===================== -->
-                <div class="col-md-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"
-                    data-wow-offset="0">
+                <div class="col-md-4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" data-wow-offset="0">
                     <div class="card border-0 shadow-sm h-100 program-card">
 
                         {{-- <img src="{{ asset('frontend/assets/img/program/disability.jpg') }}" class="card-img-top"

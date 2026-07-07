@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Award;
 use App\Models\Berita;
+use App\Models\Client;
 use App\Models\Course;
 use App\Models\Instructor;
 use App\Models\Testimoni;
@@ -18,6 +19,9 @@ class HomeController extends Controller
             ->latest()
             ->take(3)
             ->get();
+        $clients = Client::where('is_active', true)
+        ->orderBy('sort_order')
+        ->get();
         $courses = Course::latest()->get();
         $teams = Instructor::where('category', 'tim')
             ->orderBy('id', 'asc')
@@ -29,6 +33,6 @@ class HomeController extends Controller
         ->orderBy('urutan')
         ->get();
 
-        return view('welcome', compact('beritaTerbaru', 'courses', 'teams','awards','testimonis'));
+        return view('welcome', compact('beritaTerbaru', 'courses', 'teams','awards','testimonis','clients'));
     }
 }
