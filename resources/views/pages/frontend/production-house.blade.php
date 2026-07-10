@@ -324,7 +324,7 @@
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="portfolio_item">
-                        <img src="{{ asset('frontend/assets/img/portfolio/event.jpg') }}" class="img-fluid rounded"
+                        <img src="{{ asset('frontend/assets/img/Dokumentasi Event.jpg') }}" class="img-fluid rounded"
                             alt="">
                         <div class="portfolio_content">
                             <h4>Dokumentasi Event</h4>
@@ -335,7 +335,7 @@
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="portfolio_item">
-                        <img src="{{ asset('frontend/assets/img/portfolio/social-media.jpg') }}" class="img-fluid rounded"
+                        <img src="{{ asset('frontend/assets/img/Komputer.jpg') }}" class="img-fluid rounded"
                             alt="">
                         <div class="portfolio_content">
                             <h4>Konten Media Sosial</h4>
