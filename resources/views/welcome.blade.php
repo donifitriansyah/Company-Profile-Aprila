@@ -18,8 +18,7 @@
                         <div class="row">
                             <div class="col-lg-6 col-sm-12">
                                 <div class="hero-text ht_top">
-                                    <h1>APRILA INDONESIA</h1>
-                                    <h2>Terampil | Mandiri | Kompeten</h2>
+                                    <h1>Yayasan Aprila Indonesia Sejahtera</h1>
                                 </div>
                             </div>
 
@@ -182,14 +181,14 @@
                     <div class="single-counter">
                         <span class="ti-medall-alt sc_two"></span>
                         <h2 class="counter-num">299</h2>
-                        <p>Program Akademik</p>
+                        <p>Siswa PKBM</p>
                     </div>
                 </div><!-- END COL -->
                 <div class="col-lg-3 col-sm-6 col-xs-12">
                     <div class="single-counter">
                         <span class="ti-id-badge sc_three"></span>
                         <h2 class="counter-num">684</h2>
-                        <p>Siswa Bersertifikat</p>
+                        <p>Siswa LK-LPK</p>
                     </div>
                 </div><!-- END COL -->
                 <div class="col-lg-3 col-sm-6 col-xs-12">
@@ -205,7 +204,7 @@
     <!-- END COUNTER -->
 
     <!-- START ABOUT APRILA -->
-    <section class="ab_area section-padding">
+    {{-- <section class="ab_area section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s"
@@ -239,20 +238,309 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- END ABOUT APRILA -->
 
     <!-- START LAYANAN APRILA -->
-    <section class="home_course top_cat__area section-padding"
-        style="background-image: url('{{ asset('frontend/assets/img/bg/sect-lyn.png') }}'); background-size: cover; background-position: center center;">
+    <section class="ab_area section-padding">
         <div class="container">
             <div class="section-title text-center">
-                <h2>Layanan Aprila</h2>
-                <p>Aprila menyediakan berbagai program pendidikan, pelatihan, dan pemberdayaan untuk membantu masyarakat
-                    meningkatkan kompetensi, memperluas peluang, dan meraih masa depan yang lebih baik.</p>
+                <h2>Layanan Yayasan Aprila Indonesia <br> Sejahtera</h2>
+                {{-- <p>Yayasan Aprila Indonesia Sejahtera Foundation menghadirkan berbagai pendidikan, pelatihan, pendampingan
+                    usaha, dan layanan kreatif
+                    yang dirancang untuk meningkatkan kualitas sumber daya manusia. Melalui program yang terintegrasi,
+                    Aprila mendukung masyarakat dalam memperoleh pendidikan, meningkatkan kompetensi kerja, mengembangkan
+                    usaha, serta memanfaatkan teknologi dan media digital.</p> --}}
             </div>
 
             <div class="row">
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card h-100">
+
+                        <div class="service-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+
+                        <h4>PKBM </h4>
+
+                        <span class="service-subtitle">
+                            Pendidikan Kesetaraan
+                        </span>
+
+                        <p>
+                            Menyelenggarakan pendidikan Paket A, Paket B, dan Paket C
+                            sebagai solusi pendidikan bagi masyarakat.
+                        </p>
+
+                        <ul>
+                            <li>Paket A - Setara SD</li>
+                            <li>Paket B - Setara SMP</li>
+                            <li>Paket C - Setara SMA</li>
+                        </ul>
+
+                        <a href="{{ route('pkbm-aprila') }}" class="btn-service">
+                            Selengkapnya
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card h-100">
+
+                        <div class="service-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+
+                        <h4>Lembaga Kursus</h4>
+
+                        <span class="service-subtitle">
+                            Kursus & Pengembangan Kompetensi
+                        </span>
+
+                        <p>
+                            Menyelenggarakan berbagai program kursus untuk meningkatkan
+                            keterampilan kerja, kreativitas, dan kemampuan berwirausaha di era digital.
+                        </p>
+
+                        <ul>
+                            <li>Aplikasi Perkantoran</li>
+                            <li>Desain Grafis</li>
+                            <li>Video Editing</li>
+                            <li>Public Speaking</li>
+                            <li>Digital Marketing</li>
+                        </ul>
+
+                        <a href="{{ route('lembaga-kursus') }}" class="btn-service">
+                            Selengkapnya <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card h-100">
+
+                        <div class="service-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+
+                        <h4>Lembaga Pelatihan Kerja </h4>
+
+                        <span class="service-subtitle">
+                            Pelatihan Berbasis Kompetensi
+                        </span>
+
+                        <p>
+                            Menyiapkan peserta agar memiliki kompetensi yang sesuai dengan
+                            kebutuhan dunia kerja melalui pelatihan yang aplikatif dan profesional.
+                        </p>
+
+                        <ul>
+                            <li>Operator Komputer</li>
+                            <li>Desain Grafis</li>
+                            <li>Video Editing</li>
+                            <li>Public Speaking</li>
+                            <li>Digital Marketing</li>
+                            <li>Kewirausahaan & Koperasi</li>
+                        </ul>
+
+                        <a href="{{ route('lembaga-pelatihan-kerja') }}" class="btn-service">
+                            Selengkapnya <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card h-100">
+
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+
+                        <h4>Klinik Bisnis </h4>
+
+                        <span class="service-subtitle">
+                            Pendampingan UMKM & Konsultasi
+                        </span>
+
+                        <p>
+                            Mendampingi pelaku usaha dan calon wirausaha dalam membangun,
+                            mengembangkan, dan mengelola bisnis secara berkelanjutan.
+                        </p>
+
+                        <ul>
+                            <li>Konsultasi Bisnis</li>
+                            <li>Pendampingan UMKM</li>
+                            <li>Strategi Pemasaran</li>
+                            <li>Legalitas Usaha</li>
+                            <li>Pengembangan Bisnis</li>
+                        </ul>
+
+                        <a href="https://klinikbisnis.aprila.id/" class="btn-service">
+                            Selengkapnya <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card h-100">
+
+                        <div class="service-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+
+                        <h4>Production House</h4>
+
+                        <span class="service-subtitle">
+                            Creative Media & Digital Services
+                        </span>
+
+                        <p>
+                            Menyediakan layanan produksi media kreatif dan solusi digital
+                            untuk individu, instansi, maupun perusahaan.
+                        </p>
+
+                        <ul>
+                            <li>Desain & Branding</li>
+                            <li>Fotografi</li>
+                            <li>Videografi</li>
+                            <li>Digital Marketplace</li>
+                            <li>Administrasi Edukasi</li>
+                        </ul>
+
+                        <a href="{{ route('production-house') }}" class="btn-service">
+                            Selengkapnya <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card h-100">
+
+                        <div class="service-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+
+                        <h4>Bimbel Mapel & Soft Skill</h4>
+
+                        <span class="service-subtitle">
+                            Akademik & Pengembangan Diri
+                        </span>
+
+                        <p>
+                            Membantu peserta meningkatkan prestasi akademik sekaligus
+                            mengembangkan kemampuan komunikasi, kepemimpinan, dan karakter.
+                        </p>
+
+                        <ul>
+                            <li>Bimbingan Mata Pelajaran</li>
+                            <li>Public Speaking</li>
+                            <li>Leadership</li>
+                            <li>Teamwork</li>
+                            <li>Soft Skill Development</li>
+                        </ul>
+
+                        <a href="#course" class="btn-service">
+                            Selengkapnya <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <style>
+                .service-card {
+                    background: #fff;
+                    border-radius: 18px;
+                    padding: 35px;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+                    transition: .35s;
+                    position: relative;
+                    overflow: hidden;
+                    border: 1px solid #f3f3f3;
+                }
+
+                .service-card:hover {
+                    transform: translateY(-8px);
+                    box-shadow: 0 20px 45px rgba(0, 0, 0, .12);
+                }
+
+                .service-icon {
+                    width: 70px;
+                    height: 70px;
+                    background: #f5f8ff;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 20px;
+                }
+
+                .service-icon i {
+                    font-size: 30px;
+                    color: #1D4ED8;
+                }
+
+                .service-card h4 {
+                    font-weight: 700;
+                    margin-bottom: 5px;
+                }
+
+                .service-subtitle {
+                    display: inline-block;
+                    color: #1D4ED8;
+                    font-size: 14px;
+                    font-weight: 600;
+                    margin-bottom: 15px;
+                }
+
+                .service-card p {
+                    color: #666;
+                    line-height: 1.7;
+                    margin-bottom: 20px;
+                }
+
+                .service-card ul {
+                    padding-left: 0;
+                    list-style: none;
+                    margin-bottom: 25px;
+                }
+
+                .service-card ul li {
+                    margin-bottom: 10px;
+                    position: relative;
+                    padding-left: 25px;
+                }
+
+                .service-card ul li:before {
+                    content: "✓";
+                    position: absolute;
+                    left: 0;
+                    color: #22C55E;
+                    font-weight: bold;
+                }
+
+                .btn-service {
+                    color: #1D4ED8;
+                    text-decoration: none;
+                    font-weight: 600;
+                }
+
+                .btn-service i {
+                    margin-left: 5px;
+                    transition: .3s;
+                }
+
+                .btn-service:hover i {
+                    transform: translateX(5px);
+                }
+            </style>
+            {{-- <div class="row">
 
                 <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
                     <div class="single_tp">
@@ -292,10 +580,10 @@
 
                 <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">
                     <div class="single_tp">
-                        <span class="tp_icon"><i class="fa-solid fa-scissors"></i></span>
-                        <h3>Menjahit <br />& Wirausaha</h3>
-                        <p>Menghadirkan pelatihan menjahit dan inkubator wirausaha untuk membangun keterampilan praktis
-                            serta kemandirian ekonomi peserta.</p>
+                        <span class="tp_icon"><i class="fa-solid fa-microphone"></i></span>
+                        <h3>Public <br> Speaking</h3>
+                        <p>Menyelenggarakan pelatihan public speaking untuk meningkatkan kemampuan komunikasi, kepercayaan
+                            diri, serta keterampilan praktis peserta sebagai bekal dalam mengembangkan potensi diri</p>
                     </div>
                 </div>
 
@@ -308,14 +596,14 @@
                     </div>
                 </div>
 
-            </div>
+            </div> --}}
         </div>
     </section>
     <!-- END LAYANAN APRILA -->
 
     <!-- START WHY CHOOSE US -->
     <section class="why_aprila section-padding"
-        style="background:  url(assets/img/bg/shape-1.png) no-repeat center center / cover;">
+        style="background-image: url('{{ asset('frontend/assets/img/bg/sect-lyn.png') }}'); background-size: cover; background-position: center center;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
@@ -375,8 +663,7 @@
     </section>
     <!-- END WHY CHOOSE US -->
 
-    <section class="awards section-padding"
-        style="background-image: url('{{ asset('frontend/assets/img/bg/background3.png') }}'); background-size: cover; background-position: center center;">
+    <section class="awards section-padding">
 
         <div class="container">
 
@@ -409,8 +696,10 @@
         </div>
     </section>
 
+
     <!-- START TESTIMONIALS -->
-    <section class=" section-padding" style=" background-size: cover; background-position: center center;">
+    <section class=" section-padding"
+        style="background-image: url('{{ asset('frontend/assets/img/bg/background3.png') }}'); background-size: cover; background-position: center center;">
         <div class="container">
             <div class="section-title">
                 <h2>Apa Kata Mereka <br />Tentang Aprila</h2>
@@ -522,7 +811,7 @@
 
     <!-- START COURSE -->
     <!-- START COURSE -->
-    <section class="home_course section-padding"
+    <section class="home_course section-padding" id="course"
         style="background-image: url('{{ asset('frontend/assets/img/bg/bg-course.png') }}'); background-size: cover; background-position: center center;">
         <div class="container">
             <div class="row">
@@ -591,38 +880,6 @@
                         </li>
                     </ul>
 
-
-                    <div class="course-price">
-
-                        <div class="price-item">
-                            <span>Pendaftaran</span>
-                            <strong>Rp250.000</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Pendidikan Mandiri</span>
-                            <strong>Rp1.450.000</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>SPP / Bulan</span>
-                            <strong>Rp100.000</strong>
-                        </div>
-
-
-
-                        <p>
-                            Usia <strong>24 tahun ke bawah</strong> GRATIS (S&K Berlaku)
-                        </p>
-
-                        <p>
-                            Usia <strong>24 tahun ke atas</strong> GRATIS bagi peserta
-                            yang tidak mampu
-                        </p>
-
-                    </div>
-
-
                     <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
                         Lihat Detail
                     </a>
@@ -648,7 +905,7 @@
 
 
                     <h4>
-                        <a href="#">Paket B - Setara SMP</a>
+                        <a href="{{ route('detail-paket-b') }}">Paket B - Setara SMP</a>
                     </h4>
 
 
@@ -680,36 +937,8 @@
                     </ul>
 
 
-                    <div class="course-price">
 
-                        <div class="price-item">
-                            <span>Pendaftaran</span>
-                            <strong>Rp250.000</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Pendidikan Mandiri</span>
-                            <strong>Rp1.850.000</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>SPP / Bulan</span>
-                            <strong>Rp100.000</strong>
-                        </div>
-
-                        <p>
-                            Usia <strong>24 tahun ke bawah</strong> GRATIS (S&K Berlaku)
-                        </p>
-
-                        <p>
-                            Usia <strong>24 tahun ke atas</strong> GRATIS bagi peserta
-                            yang tidak mampu
-                        </p>
-
-                    </div>
-
-
-                    <a href="#" class="btn btn-primary btn-block">
+                    <a href="{{ route('detail-paket-b') }}" class="btn btn-primary btn-block">
                         Lihat Detail
                     </a>
 
@@ -734,7 +963,7 @@
 
 
                     <h4>
-                        <a href="#">Paket C - Setara SMA</a>
+                        <a href="{{ route('detail-paket-c') }}">Paket C - Setara SMA</a>
                     </h4>
 
 
@@ -765,37 +994,7 @@
                         </li>
                     </ul>
 
-
-                    <div class="course-price">
-
-                        <div class="price-item">
-                            <span>Pendaftaran</span>
-                            <strong>Rp250.000</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Pendidikan Mandiri</span>
-                            <strong>Rp2.250.000</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>SPP / Bulan</span>
-                            <strong>Rp150.000</strong>
-                        </div>
-
-                        <p>
-                            Usia <strong>24 tahun ke bawah</strong> GRATIS (S&K Berlaku)
-                        </p>
-
-                        <p>
-                            Usia <strong>24 tahun ke atas</strong> GRATIS bagi peserta
-                            yang tidak mampu
-                        </p>
-
-                    </div>
-
-
-                    <a href="#" class="btn btn-primary btn-block">
+                    <a href="{{ route('detail-paket-c') }}" class="btn btn-primary btn-block">
                         Lihat Detail
                     </a>
 
@@ -820,7 +1019,7 @@
 
 
                     <h4>
-                        <a href="{{ route('detail-paket-a') }}">APLIKASI PERKANTORAN</a>
+                        <a href="{{ route('detail-aplikasi-perkantoran') }}">Aplikasi Perkantoran</a>
                     </h4>
                     <p>Menguasai berbagai perangkat lunak esensial untuk produktivitas kerja. </p>
 
@@ -843,31 +1042,10 @@
                     </ul>
 
 
-                    <div class="course-price">
-
-                        <div class="price-item">
-                            <span>Reguler</span>
-                            <strong>Rp450.000 (Pontianak) <br> Rp350.000 (Kubu Raya)</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Pontianak</span>
-                            <strong>Rp750.000 | Rp 550.000</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Kubu Raya</span>
-                            <strong>Rp 500.000 | Rp400.000</strong>
-                        </div>
-                        <div class="price-item">
-                            <span>Private Online</span>
-                            <strong>Rp 450.000</strong>
-                        </div>
-
-                    </div>
 
 
-                    <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
+
+                    <a href="{{ route('detail-aplikasi-perkantoran') }}" class="btn btn-primary btn-block">
                         Lihat Detail
                     </a>
 
@@ -892,7 +1070,7 @@
 
 
                     <h4>
-                        <a href="{{ route('detail-paket-a') }}">Desain Grafis</a>
+                        <a href="{{ route('detail-desain-grafis') }}">Desain Grafis</a>
                     </h4>
                     <p>Menciptakan desain visual menarik dengan mudah menggunakan platform Canva.</p>
 
@@ -915,31 +1093,7 @@
                     </ul>
 
 
-                    <div class="course-price">
-
-                        <div class="price-item">
-                            <span>Reguler</span>
-                            <strong>Rp650.000 (Pontianak) <br> Rp500.000 (Kubu Raya)</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Pontianak</span>
-                            <strong>Rp1.300.000 | Rp 1.000.000</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Kubu Raya</span>
-                            <strong>Rp 1.100.000 | Rp800.000</strong>
-                        </div>
-                        <div class="price-item">
-                            <span>Private Online</span>
-                            <strong>Rp 850.000</strong>
-                        </div>
-
-                    </div>
-
-
-                    <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
+                    <a href="{{ route('detail-desain-grafis') }}" class="btn btn-primary btn-block">
                         Lihat Detail
                     </a>
 
@@ -964,7 +1118,7 @@
 
 
                     <h4>
-                        <a href="{{ route('detail-paket-a') }}">Video Editing</a>
+                        <a href="{{ route('detail-video-editing') }}">Video Editing</a>
                     </h4>
                     <p>Menciptakan desain visual menarik dengan mudah menggunakan platform Canva.</p>
 
@@ -986,32 +1140,7 @@
                         </li>
                     </ul>
 
-
-                    <div class="course-price">
-
-                        <div class="price-item">
-                            <span>Reguler</span>
-                            <strong>Rp650.000 (Pontianak) <br> Rp500.000 (Kubu Raya)</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Pontianak</span>
-                            <strong>Rp1.300.000 | Rp 1.000.000</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Kubu Raya</span>
-                            <strong>Rp 1.100.000 | Rp800.000</strong>
-                        </div>
-                        <div class="price-item">
-                            <span>Private Online</span>
-                            <strong>Rp 850.000</strong>
-                        </div>
-
-                    </div>
-
-
-                    <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
+                    <a href="{{ route('detail-video-editing') }}" class="btn btn-primary btn-block">
                         Lihat Detail
                     </a>
 
@@ -1036,7 +1165,7 @@
 
 
                     <h4>
-                        <a href="{{ route('detail-paket-a') }}">Public Speaking</a>
+                        <a href="{{ route('detail-public-speaking') }}">Public Speaking</a>
                     </h4>
                     <p>Meningkatkan kepercayaan diri dan kemampuan presentasi yang efektif.</p>
                     <ul class="course-info">
@@ -1056,32 +1185,7 @@
                         </li>
                     </ul>
 
-
-                    <div class="course-price">
-
-                        <div class="price-item">
-                            <span>Reguler</span>
-                            <strong>Rp900.000 (Pontianak) <br> Rp700.000 (Kubu Raya)</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Pontianak</span>
-                            <strong>Rp1.800.000 | Rp 1.400.000</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Kubu Raya</span>
-                            <strong>Rp 1.600.000 | Rp1.200.000</strong>
-                        </div>
-                        <div class="price-item">
-                            <span>Private Online</span>
-                            <strong>Rp 1.250.000</strong>
-                        </div>
-
-                    </div>
-
-
-                    <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
+                    <a href="{{ route('detail-public-speaking') }}" class="btn btn-primary btn-block">
                         Lihat Detail
                     </a>
 
@@ -1106,7 +1210,7 @@
 
 
                     <h4>
-                        <a href="{{ route('detail-paket-a') }}">Digital Marketing</a>
+                        <a href="{{ route('detail-digital-marketing') }}">Digital Marketing</a>
                     </h4>
                     <p>Memahami strategi pemasaran digital untuk menjangkau audiens lebih luas.</p>
                     <ul class="course-info">
@@ -1126,37 +1230,248 @@
                         </li>
                     </ul>
 
-
-                    <div class="course-price">
-
-                        <div class="price-item">
-                            <span>Reguler</span>
-                            <strong>Rp650.000 (Pontianak) <br> Rp500.000 (Kubu Raya)</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Pontianak</span>
-                            <strong>Rp1.300.000 | Rp 1.000.000</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Kubu Raya</span>
-                            <strong>Rp 1.100.000 | Rp800.000</strong>
-                        </div>
-                        <div class="price-item">
-                            <span>Private Online</span>
-                            <strong>Rp 850.000</strong>
-                        </div>
-
-                    </div>
-
-
-                    <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
+                    <a href="{{ route('detail-digital-marketing') }}" class="btn btn-primary btn-block">
                         Lihat Detail
                     </a>
 
                 </div>
 
+                {{-- Komputer Kids --}}
+                <div class="single_course">
+
+                    <div class="single_c_img">
+                        <img src="{{ asset('frontend/assets/img/course/Computer Kids.png') }}" class="img-fluid"
+                            alt="course-image">
+                        <span>Computer</span>
+                    </div>
+
+
+                    <div class="course-rating">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                    </div>
+
+
+                    <h4>
+                        <a href="{{ route('detail-computer-kids') }}">Computer Kids | Bersertifikat</a>
+                    </h4>
+                    <p>Menguasai berbagai perangkat lunak esensial untuk produktivitas pembelajaran.</p>
+
+
+                    <ul class="course-info">
+                        <li>
+                            <i class="ti-book"></i>
+                            <span>24 Pertemuan</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-alarm-clock"></i>
+                            <span>60-90 Menit / Pertemuan</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-calendar"></i>
+                            <span>3x sepekan</span>
+                        </li>
+                    </ul>
+
+
+                    <a href="{{ route('detail-computer-kids') }}" class="btn btn-primary btn-block">
+                        Lihat Detail
+                    </a>
+
+                </div>
+
+                {{-- English Kids | Bersertifikat --}}
+                <div class="single_course">
+
+                    <div class="single_c_img">
+                        <img src="{{ asset('frontend/assets/img/course/English Kids.png') }}" class="img-fluid"
+                            alt="course-image">
+                        <span>English</span>
+                    </div>
+
+
+                    <div class="course-rating">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                    </div>
+
+
+                    <h4>
+                        <a href="{{ route('detail-english-kids') }}">English Kids | bersertifikat</a>
+                    </h4>
+                    <p>Belajar dan memandu siswa cakap dan terampil dalam Bahasa inggris.</p>
+
+
+                    <ul class="course-info">
+                        <li>
+                            <i class="ti-book"></i>
+                            <span>24 Pertemuan</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-alarm-clock"></i>
+                            <span>60-90 Menit / Pertemuan</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-calendar"></i>
+                            <span>3x sepekan</span>
+                        </li>
+                    </ul>
+
+
+
+                    <a href="{{ route('detail-english-kids') }}" class="btn btn-primary btn-block">
+                        Lihat Detail
+                    </a>
+
+                </div>
+
+                {{-- Public Speaking Kids | Bersertifikat --}}
+                <div class="single_course">
+
+                    <div class="single_c_img">
+                        <img src="{{ asset('frontend/assets/img/course/Public Speaking Kids.png') }}" class="img-fluid"
+                            alt="course-image">
+                        <span>Public Speaking</span>
+                    </div>
+
+
+                    <div class="course-rating">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                    </div>
+
+
+                    <h4>
+                        <a href="{{ route('detail-public-speaking-kids') }}">Public Speaking Kids | Bersertifikat</a>
+                    </h4>
+                    <p>Meningkatkan kepercayaan diri dan kemampuan berbicara, presentasi dan hal yang senada untuk
+                        Pendidikan Anak.</p>
+
+
+                    <ul class="course-info">
+                        <li>
+                            <i class="ti-book"></i>
+                            <span>24 Pertemuan</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-alarm-clock"></i>
+                            <span>60-90 Menit / Pertemuan</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-calendar"></i>
+                            <span>3x sepekan</span>
+                        </li>
+                    </ul>
+
+
+
+                    <a href="{{ route('detail-public-speaking-kids') }}" class="btn btn-primary btn-block">
+                        Lihat Detail
+                    </a>
+
+                </div>
+
+                {{-- Bimbingan Belajar (Bimbel) --}}
+                <div class="single_course">
+
+                    <div class="single_c_img">
+                        <img src="{{ asset('frontend/assets/img/course/Bimbel.png') }}" class="img-fluid"
+                            alt="course-image">
+                        <span>BIMBEL</span>
+                    </div>
+
+
+                    <div class="course-rating">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                    </div>
+
+
+                    <h4>
+                        <a href="{{ route('detail-bimbingan-belajar') }}">Bimbingan Belajar</a>
+                    </h4>
+                    <p>Pendampingan belajar akademik sesuai kebutuhan peserta.</p>
+                    <ul class="course-info">
+                        <li>
+                            <i class="ti-book"></i>
+                            <span>Pertemuan Rutin</span>
+                        </li>
+
+                    </ul>
+
+
+
+
+
+                    <a href="{{ route('detail-bimbingan-belajar') }}" class="btn btn-primary btn-block">
+                        Lihat Detail
+                    </a>
+
+                </div>
+                {{-- Program Terpadu Aprila Academy --}}
+                <div class="single_course">
+
+                    <div class="single_c_img">
+                        <img src="{{ asset('frontend/assets/img/course/Aprila Academy Kids.png') }}" class="img-fluid"
+                            alt="course-image">
+                        <span>Aprila Academy</span>
+                    </div>
+
+
+                    <div class="course-rating">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                    </div>
+
+
+                    <h4>
+                        <a href="{{ route('detail-kids-academy') }}">Program Terpadu Aprila Academy</a>
+                    </h4>
+                    <p>Program paket pembelajaran terpadu untuk mendukung perkembangan akademik dan keterampilan anak.</p>
+                    <ul class="course-info">
+                        <li>
+                            <i class="ti-book"></i>
+                            <span>60 Pertemuan</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-alarm-clock"></i>
+                            <span>60-90 Menit / Pertemuan</span>
+                        </li>
+
+                        <li>
+                            <i class="ti-calendar"></i>
+                            <span>3x sepekan</span>
+                        </li>
+                    </ul>
+
+
+                    <a href="{{ route('detail-kids-academy') }}" class="btn btn-primary btn-block">
+                        Lihat Detail
+                    </a>
+
+                </div>
 
             </div>
         </div>
@@ -1189,10 +1504,10 @@
                 <h2>Tim Aprila</h2>
             </div>
 
-            <div class="row">
+            <div class="team-carousel owl-carousel">
 
                 @foreach ($teams as $team)
-                    <div class="col-lg-3 col-sm-6 col-xs-12 wow fadeInUp">
+                    <div class="item wow fadeInUp">
 
                         <div class="our-team">
 
@@ -1214,6 +1529,7 @@
 
         </div>
     </section>
+
     <!-- END TEAM -->
 
     <!-- START BLOG -->

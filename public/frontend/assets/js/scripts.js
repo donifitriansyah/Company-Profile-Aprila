@@ -80,18 +80,26 @@ Version      : 1.0
         /* END COUNTDOWN JS */
 
         /*START TESTIMONIAL JS*/
+        /*START TESTIMONIAL JS*/
         $("#testimonial-slider").owlCarousel({
             items: 1,
             itemsDesktop: [1000, 1],
             itemsDesktopSmall: [980, 1],
             itemsTablet: [768, 1],
             itemsMobile: [650, 1],
+
             pagination: true,
             navigation: true,
             navigationText: ["", ""],
-            slideSpeed: 1000,
-            autoPlay: false
+
+            slideSpeed: 800,
+
+            autoPlay: 4000,      // pindah setiap 4 detik
+            stopOnHover: true,   // berhenti saat mouse di atas
+            rewindNav: true,
+            scrollPerPage: false
         });
+        /*END TESTIMONIAL JS*/
         /*END TESTIMONIAL JS*/
 
         /*START TESTIMONIAL JS*/
@@ -105,7 +113,8 @@ Version      : 1.0
             navigation: true,
             navigationText: ["", ""],
             slideSpeed: 1000,
-            autoPlay: false
+            autoPlay: 4000,
+            stopOnHover: true,
         });
         /*END TESTIMONIAL JS*/
 
@@ -127,6 +136,20 @@ Version      : 1.0
 
             pagination: true,
             navigation: false
+        });
+        $('.team-carousel').owlCarousel({
+            autoPlay: 3000,
+            items: 4,
+            itemsDesktop: [1199, 4],
+            itemsDesktopSmall: [992, 4],
+            itemsTablet: [768, 2],
+            itemsMobile: [480, 1],
+
+            pagination: true,
+            navigation: true,
+            navigationText: ["", ""],
+            slideSpeed: 800,
+            stopOnHover: true
         });
 
 

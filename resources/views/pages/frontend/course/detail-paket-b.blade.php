@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 @section('title')
-    Paket A - Setara SD
+    Paket B - Setara SMP
 @endsection
 @section('content')
     <!-- START SECTION TOP -->
@@ -12,10 +12,10 @@
         <div class="container">
             <div class="col-lg-10 offset-lg-1 text-center">
                 <div class="section-top-title wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
-                    <h1>Detail Paket A</h1>
+                    <h1>Detail Paket B</h1>
                     <ul>
                         <li><a href="{{ route('welcome') }}">Beranda</a></li>
-                        <li> / Detail Paket A</li>
+                        <li> / Detail Paket B</li>
                     </ul>
                 </div><!-- //.HERO-TEXT -->
             </div><!--- END COL -->
@@ -31,7 +31,7 @@
                     <div class="single_event_single">
                         <img alt="" class="img-fluid" src="{{ asset('frontend/assets/img/course/Paket A.png') }}" />
                         <div class="single_event_text_single">
-                            <h4>Paket A - Setara SD</h4>
+                            <h4>Paket B - Setara SMP</h4>
                             <span> <i class="ti-book"></i>2–3 Hari / Minggu</span>
                             <i class="ti-book"></i>
                             <span><i class="ti-alarm-clock"></i>60–90 Menit / Pertemuan</span>
@@ -40,8 +40,8 @@
                             <span><i class="ti-user"></i>Pendampingan Tutor</span>
 
                             <p>
-                                Program Paket A PKBM Aprila Indonesia merupakan program pendidikan kesetaraan
-                                setara Sekolah Dasar (SD) yang ditujukan bagi peserta didik yang ingin melanjutkan
+                                Program Paket B PKBM Aprila Indonesia merupakan program pendidikan kesetaraan
+                                setara Sekolah Menengah Pertama (SMP) yang ditujukan bagi peserta didik yang ingin melanjutkan
                                 atau menyelesaikan pendidikan dasar melalui jalur nonformal.
                             </p>
 
@@ -216,7 +216,7 @@
             <br>
             <div class="event_info_register">
                 <a class="btn_one"
-                    href="https://wa.me/628996567234?text=Halo%20PKBM%20Aprila%20Indonesia,%20saya%20ingin%20mendaftar%20program%20Paket%20A."
+                    href="https://wa.me/628996567234?text=Halo%20PKBM%20Aprila%20Indonesia,%20saya%20ingin%20mendaftar%20program%20Paket%20B."
                     target="_blank">
                     Daftar Sekarang
                 </a>

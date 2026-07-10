@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class ClientController extends Controller
@@ -90,23 +91,25 @@ class ClientController extends Controller
         ]);
 
         return redirect()
-            ->route('admin.clients.index')
+            ->route('admin-klien.index')
             ->with('success', 'Data klien berhasil diperbarui.');
     }
 
     /**
      * Remove the specified resource.
      */
-    public function destroy(Client $client)
-    {
-        if ($client->logo && Storage::disk('public')->exists($client->logo)) {
-            Storage::disk('public')->delete($client->logo);
-        }
+    public function destroy($id)
+{
+    $client = Client::findOrFail($id);
 
-        $client->delete();
-
-        return redirect()
-            ->route('admin.clients.index')
-            ->with('success', 'Data klien berhasil dihapus.');
+    if ($client->logo && Storage::disk('public')->exists($client->logo)) {
+        Storage::disk('public')->delete($client->logo);
     }
+
+    $client->delete();
+
+    return redirect()
+        ->route('admin-klien.index')
+        ->with('success', 'Data klien berhasil dihapus.');
+}
 }

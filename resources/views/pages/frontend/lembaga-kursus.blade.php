@@ -11,10 +11,10 @@
         <div class="container">
             <div class="col-lg-10 offset-lg-1 text-center">
                 <div class="section-top-title wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
-                    <h1>LK-LPK Aprila</h1>
+                    <h1>Lembaga Kursus dan Pelatihan Aprila</h1>
                     <ul>
                         <li><a href="{{ route('welcome') }}">Beranda</a></li>
-                        <li> / LK-LPK Aprila</li>
+                        <li> / Lembaga Kursus</li>
                     </ul>
                 </div><!-- //.HERO-TEXT -->
             </div><!--- END COL -->
@@ -29,7 +29,7 @@
                 <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s"
                     data-wow-offset="0">
                     <div class="ab_img">
-                        <img src="{{ asset('frontend/assets/img/Logo LK-LPK Aprila.png') }}" class="img-fluid"
+                        <img src="{{ asset('frontend/assets/img/LKP Tentang.png') }}" class="img-fluid"
                             alt="Tentang Aprila">
                     </div>
                 </div>
@@ -37,24 +37,29 @@
                 <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
                     data-wow-offset="0">
                     <div class="ab_content">
-                        <h2>Tentang LK-LPK Aprila</h2>
-                        <p>LK-LPK Aprila merupakan program dari lembaga kursus dan pelatihan kerja yang terdaftar secara
-                            resmi sebagai LK-LPK dengan jangkauan unit layanan yang beroperasi di wilayah Kubu Raya dan
-                            Pontianak Sekalbar dan menjamin legalitas, kredibilitas, serta mutu dalam penyelenggaraan
-                            program pendidikan dan pelatihan.
+                        <h2>Tentang Lembaga Kursus dan Pelatihan Aprila</h2>
+
+                        <p>
+                            Lembaga Kursus dan Pelatihan Aprila merupakan Lembaga Kursus dan Pelatihan (LKP)
+                            yang terdaftar secara resmi dan beroperasi di wilayah Kubu Raya dan
+                            Kota Pontianak. Kami berkomitmen menyelenggarakan pendidikan nonformal
+                            yang berkualitas melalui program pembelajaran berbasis keterampilan,
+                            pengembangan kompetensi, dan peningkatan kualitas sumber daya manusia.
                         </p>
-                        <p>Sejak berdiri pada tahun 2009, LK-LPK berkomitmen untuk meningkatkan kualitas dan produktivitas
-                            sumber daya manusia melalui pelatihan yang berorientasi pada keterampilan praktis, pengembangan
-                            kompetensi, serta kebutuhan dunia kerja dan pendidikan.
+
+                        <p>
+                            Sejak berdiri pada tahun 2009, Aprila telah membantu peserta didik
+                            mengembangkan kemampuan sesuai minat dan kebutuhan, baik untuk
+                            melanjutkan pendidikan, meningkatkan kompetensi, maupun mempersiapkan
+                            diri menghadapi dunia kerja.
                         </p>
+
                         <ul>
                             <li><span class="ti-check"></span> Metode Pembelajaran Berbasis Praktik & Bakat Minat (BP–BBM)
                             </li>
-                            <li><span class="ti-check"></span> Fokus pada Keterampilan Digital
-                                & Pengembangan Diri</li>
+                            <li><span class="ti-check"></span> Fokus pada Keterampilan Digital & Pengembangan Diri</li>
                             <li><span class="ti-check"></span> Program Pembelajaran yang Fleksibel</li>
                         </ul>
-
                     </div>
                 </div>
             </div>
@@ -66,11 +71,7 @@
     <section class="py-5"
         style="background-image: url('{{ asset('frontend/assets/img/bg/sect-lyn.png') }}'); background-size: cover; background-position: center center;">
         <div class="container">
-
-
-
             <div class="row g-4">
-
                 <!-- CONTENT -->
                 <section class="py-5">
                     <div class="container">
@@ -80,8 +81,8 @@
 
                             <!-- LOGO WRAPPER -->
                             <div class="ab_img mb-3">
-                                <img src="{{ asset('frontend/assets/img/Logo LK-LPK Aprila.png') }}" class="img-fluid"
-                                    alt="Tentang Aprila" style="width: 520px;">
+                                <img src="{{ asset('frontend/assets/img/LKP.png') }}" class="img-fluid"
+                                    alt="Tentang Aprila" style="width: 420px;">
                             </div>
 
 
@@ -176,7 +177,7 @@
             <div class="row">
                 <div class="col-lg-8 col-sm-6 col-xs-12">
                     <div class="section-title">
-                        <h2>Wujudkan Kemampuan Terbaik Anda Bersama Lembaga Kursus dan Pelatihan Kerja Aprila</h2>
+                        <h2>Wujudkan Kemampuan Terbaik Anda Bersama Lembaga Kursus dan Pelatihan Aprila</h2>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 col-xs-12">
@@ -206,7 +207,7 @@
 
 
                     <h4>
-                        <a href="{{ route('detail-paket-a') }}">APLIKASI PERKANTORAN</a>
+                        <a href="{{ route('detail-aplikasi-perkantoran') }}">Aplikasi Perkantoran</a>
                     </h4>
                     <p>Menguasai berbagai perangkat lunak esensial untuk produktivitas kerja. </p>
 
@@ -229,31 +230,9 @@
                     </ul>
 
 
-                    <div class="course-price">
-
-                        <div class="price-item">
-                            <span>Reguler</span>
-                            <strong>Rp450.000 (Pontianak) <br> Rp350.000 (Kubu Raya)</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Pontianak</span>
-                            <strong>Rp750.000 | Rp 550.000</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Kubu Raya</span>
-                            <strong>Rp 500.000 | Rp400.000</strong>
-                        </div>
-                        <div class="price-item">
-                            <span>Private Online</span>
-                            <strong>Rp 450.000</strong>
-                        </div>
-
-                    </div>
 
 
-                    <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
+                    <a href="{{ route('detail-aplikasi-perkantoran') }}" class="btn btn-primary btn-block">
                         Lihat Detail
                     </a>
 
@@ -278,7 +257,7 @@
 
 
                     <h4>
-                        <a href="{{ route('detail-paket-a') }}">Desain Grafis</a>
+                        <a href="{{ route('detail-desain-grafis') }}">Desain Grafis</a>
                     </h4>
                     <p>Menciptakan desain visual menarik dengan mudah menggunakan platform Canva.</p>
 
@@ -301,31 +280,8 @@
                     </ul>
 
 
-                    <div class="course-price">
 
-                        <div class="price-item">
-                            <span>Reguler</span>
-                            <strong>Rp650.000 (Pontianak) <br> Rp500.000 (Kubu Raya)</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Pontianak</span>
-                            <strong>Rp1.300.000 | Rp 1.000.000</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Kubu Raya</span>
-                            <strong>Rp 1.100.000 | Rp800.000</strong>
-                        </div>
-                        <div class="price-item">
-                            <span>Private Online</span>
-                            <strong>Rp 850.000</strong>
-                        </div>
-
-                    </div>
-
-
-                    <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
+                    <a href="{{ route('detail-desain-grafis') }}" class="btn btn-primary btn-block">
                         Lihat Detail
                     </a>
 
@@ -350,7 +306,7 @@
 
 
                     <h4>
-                        <a href="{{ route('detail-paket-a') }}">Video Editing</a>
+                        <a href="{{ route('detail-video-editing') }}">Video Editing</a>
                     </h4>
                     <p>Menciptakan desain visual menarik dengan mudah menggunakan platform Canva.</p>
 
@@ -372,32 +328,7 @@
                         </li>
                     </ul>
 
-
-                    <div class="course-price">
-
-                        <div class="price-item">
-                            <span>Reguler</span>
-                            <strong>Rp650.000 (Pontianak) <br> Rp500.000 (Kubu Raya)</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Pontianak</span>
-                            <strong>Rp1.300.000 | Rp 1.000.000</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Kubu Raya</span>
-                            <strong>Rp 1.100.000 | Rp800.000</strong>
-                        </div>
-                        <div class="price-item">
-                            <span>Private Online</span>
-                            <strong>Rp 850.000</strong>
-                        </div>
-
-                    </div>
-
-
-                    <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
+                    <a href="{{ route('detail-video-editing') }}" class="btn btn-primary btn-block">
                         Lihat Detail
                     </a>
 
@@ -422,7 +353,7 @@
 
 
                     <h4>
-                        <a href="{{ route('detail-paket-a') }}">Public Speaking</a>
+                        <a href="{{ route('detail-public-speaking') }}">Public Speaking</a>
                     </h4>
                     <p>Meningkatkan kepercayaan diri dan kemampuan presentasi yang efektif.</p>
                     <ul class="course-info">
@@ -442,32 +373,7 @@
                         </li>
                     </ul>
 
-
-                    <div class="course-price">
-
-                        <div class="price-item">
-                            <span>Reguler</span>
-                            <strong>Rp900.000 (Pontianak) <br> Rp700.000 (Kubu Raya)</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Pontianak</span>
-                            <strong>Rp1.800.000 | Rp 1.400.000</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Kubu Raya</span>
-                            <strong>Rp 1.600.000 | Rp1.200.000</strong>
-                        </div>
-                        <div class="price-item">
-                            <span>Private Online</span>
-                            <strong>Rp 1.250.000</strong>
-                        </div>
-
-                    </div>
-
-
-                    <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
+                    <a href="{{ route('detail-public-speaking') }}" class="btn btn-primary btn-block">
                         Lihat Detail
                     </a>
 
@@ -492,7 +398,7 @@
 
 
                     <h4>
-                        <a href="{{ route('detail-paket-a') }}">Digital Marketing</a>
+                        <a href="{{ route('detail-digital-marketing') }}">Digital Marketing</a>
                     </h4>
                     <p>Memahami strategi pemasaran digital untuk menjangkau audiens lebih luas.</p>
                     <ul class="course-info">
@@ -513,31 +419,7 @@
                     </ul>
 
 
-                    <div class="course-price">
-
-                        <div class="price-item">
-                            <span>Reguler</span>
-                            <strong>Rp650.000 (Pontianak) <br> Rp500.000 (Kubu Raya)</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Pontianak</span>
-                            <strong>Rp1.300.000 | Rp 1.000.000</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Kubu Raya</span>
-                            <strong>Rp 1.100.000 | Rp800.000</strong>
-                        </div>
-                        <div class="price-item">
-                            <span>Private Online</span>
-                            <strong>Rp 850.000</strong>
-                        </div>
-
-                    </div>
-
-
-                    <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
+                    <a href="{{ route('detail-digital-marketing') }}" class="btn btn-primary btn-block">
                         Lihat Detail
                     </a>
 
@@ -607,27 +489,6 @@
                     </ul>
 
 
-                    <div class="course-price">
-
-                        <div class="price-item">
-                            <span>Reguler</span>
-                            <strong>Rp1.500.000 (Pontianak) <br> Rp1.000.000 (Kubu Raya)</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Pontianak</span>
-                            <strong>Rp2.800.000 | Rp 1.800.000</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Kubu Raya</span>
-                            <strong>Rp 2.500.000 | Rp1.600.000</strong>
-                        </div>
-
-
-                    </div>
-
-
                     <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
                         Lihat Detail
                     </a>
@@ -675,27 +536,6 @@
                             <span>3x sepekan</span>
                         </li>
                     </ul>
-
-
-                    <div class="course-price">
-
-                        <div class="price-item">
-                            <span>Reguler</span>
-                            <strong>Rp1.500.000 (Pontianak) <br> Rp1.000.000 (Kubu Raya)</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Pontianak</span>
-                            <strong>Rp2.800.000 | Rp 1.800.000</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Kubu Raya</span>
-                            <strong>Rp 2.500.000 | Rp1.600.000</strong>
-                        </div>
-
-
-                    </div>
 
 
                     <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
@@ -748,26 +588,6 @@
                     </ul>
 
 
-                    <div class="course-price">
-
-                        <div class="price-item">
-                            <span>Reguler</span>
-                            <strong>Rp1.500.000 (Pontianak) <br> Rp1.000.000 (Kubu Raya)</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Pontianak</span>
-                            <strong>Rp2.800.000 | Rp 1.800.000</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Kubu Raya</span>
-                            <strong>Rp 2.500.000 | Rp1.600.000</strong>
-                        </div>
-
-                    </div>
-
-
                     <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
                         Lihat Detail
                     </a>
@@ -804,26 +624,6 @@
                         </li>
 
                     </ul>
-
-
-                    <div class="course-price">
-
-                        <div class="price-item">
-                            <span>Reguler</span>
-                            <strong>Rp500.000 (Pontianak) <br> Rp350.000 (Kubu Raya)</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Pontianak</span>
-                            <strong>Rp1.000.000 | Rp 700.000</strong>
-                        </div>
-
-                        <div class="price-item">
-                            <span>Private Kubu Raya</span>
-                            <strong>Rp 800.000 | Rp550.000</strong>
-                        </div>
-
-                    </div>
 
 
                     <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
@@ -872,15 +672,6 @@
                     </ul>
 
 
-                    <div class="course-price">
-
-                        <div class="price-item">
-                            <span>Biaya Paket</span>
-                            <strong>Rp5.000.000 (Pontianak) <br> Rp3.500.000 (Kubu Raya)</strong>
-                        </div>
-                        <p>Bonus : Merchandise (Tas & Tumbler)</p>
-
-                    </div>
 
 
                     <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">

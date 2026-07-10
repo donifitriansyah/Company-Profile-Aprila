@@ -61,9 +61,122 @@
     </section>
     <!-- END ABOUT APRILA -->
 
+    <!-- CONTENT -->
+    <section class="py-5" style="background-image: url('{{ asset('frontend/assets/img/bg/sect-lyn.png') }}'); background-size: cover; background-position: center center;">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- CONTENT -->
+                <section class="py-5">
+                    <div class="container">
+
+                        <!-- HEADER -->
+                        <div class="section-title text-center mb-5">
+
+                            <!-- LOGO WRAPPER -->
+                            <div class="ab_img mb-3">
+                                <img src="{{ asset('frontend/assets/img/Logo PKBM Landscape.png') }}" class="img-fluid"
+                                    alt="Tentang Aprila" style="width: 520px;">
+                            </div>
+
+                            <!-- BADGE AKREDITASI -->
+                            <div class="d-inline-block px-4 py-2 mb-2 rounded-pill shadow-sm fs-3"
+                                style="background: linear-gradient(135deg, #0d6efd, #195287); color: #fff; font-weight: 600;">
+
+                                Terakreditasi B
+                            </div>
+
+                            <!-- IDENTITAS -->
+                            <div class="mt-2">
+                                <p class="text-muted mb-0" style="font-size: 14px; line-height: 1.6;">
+                                    <i class="fa-solid fa-id-card me-1 text-primary"></i>
+                                    NPSN PKBM : P2970103
+                                    <span class="mx-2">|</span>
+                                    <i class="fa-solid fa-building-columns me-1 text-success"></i>
+                                    Tahun Berdiri : 2007
+                                    <span class="mx-2">|</span>
+                                    <i class="fa-solid fa-certificate me-1 text-warning"></i>
+                                    SK Operasional : 421.9 / 133 / DIKBUD.D / 2019
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="row g-4 justify-content-center">
+
+                            <!-- VISI -->
+                            <div class="col-md-6 col-lg-5">
+                                <div class="card border-0 shadow h-100 text-center p-4 visi-card">
+
+                                    <!-- ICON -->
+                                    <div class="mb-3">
+                                        <i class="fa-solid fa-eye fa-3x text-primary"></i>
+                                    </div>
+
+
+                                    <h4 class="fw-bold mb-3">Visi</h4>
+
+                                    <p class="text-muted mb-0">
+                                        Menjadi Pusat Kegiatan Belajar Masyarakat yang unggul dalam penyelenggaraan
+                                        pendidikan kesetaraan dan pembelajaran masyarakat yang inklusif, berkualitas, dan
+                                        berdaya guna di Kalimantan Barat.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- MISI -->
+                            <div class="col-md-6 col-lg-7">
+                                <div class="card border-0 shadow h-100 p-4 misi-card">
+
+                                    <!-- ICON -->
+                                    <div class="text-center mb-3">
+                                        <i class="fa-solid fa-bullseye fa-3x text-success"></i>
+                                    </div>
+
+                                    <h4 class="fw-bold text-center mb-3">Misi</h4>
+
+                                    <ul class="list-unstyled m-0">
+                                        <li class="mb-2">
+                                            <i class="fa-solid fa-check text-success me-2"></i>
+                                            Menyelenggarakan pendidikan kesetaraan Paket A, Paket B, dan Paket C sebagai
+                                            alternatif pendidikan formal.
+                                        </li>
+
+                                        <li class="mb-2">
+                                            <i class="fa-solid fa-check text-success me-2"></i>
+                                            Memberikan layanan pembelajaran yang fleksibel dan adaptif sesuai dengan
+                                            kebutuhan peserta didik.
+                                        </li>
+
+                                        <li class="mb-2">
+                                            <i class="fa-solid fa-check text-success me-2"></i>
+                                            Mendorong peningkatan literasi, karakter, dan kecakapan hidup peserta didik.
+                                        </li>
+
+                                        <li class="mb-0">
+                                            <i class="fa-solid fa-check text-success me-2"></i>
+                                            Membantu peserta didik agar mampu berdaya guna dan berkontribusi positif di lingkungan masyarakat.
+                                        </li>
+                                        <li class="mb-0">
+                                            <i class="fa-solid fa-check text-success me-2"></i>
+                                            Bersinergi dengan instansi dan pihak terkait dalam peningkatan kualitas pendidikan masyarakat.
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </section>
+
     <!-- START COURSE -->
-    <section class="home_course section-padding"
-        style="background-image: url('{{ asset('frontend/assets/img/bg/sect-lyn.png') }}'); background-size: cover; background-position: center center;">
+    <section class="home_course section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-sm-6 col-xs-12">
@@ -131,35 +244,6 @@
                         </ul>
 
 
-                        <div class="course-price">
-
-                            <div class="price-item">
-                                <span>Pendaftaran</span>
-                                <strong>Rp250.000</strong>
-                            </div>
-
-                            <div class="price-item">
-                                <span>Pendidikan Mandiri</span>
-                                <strong>Rp1.450.000</strong>
-                            </div>
-
-                            <div class="price-item">
-                                <span>SPP / Bulan</span>
-                                <strong>Rp100.000</strong>
-                            </div>
-
-
-
-                            <p>
-                                Usia <strong>24 tahun ke bawah</strong> GRATIS (S&K Berlaku)
-                            </p>
-
-                            <p>
-                                Usia <strong>24 tahun ke atas</strong> GRATIS bagi peserta
-                                yang tidak mampu
-                            </p>
-
-                        </div>
 
 
                         <a href="{{ route('detail-paket-a') }}" class="btn btn-primary btn-block">
@@ -219,34 +303,6 @@
                         </ul>
 
 
-                        <div class="course-price">
-
-                            <div class="price-item">
-                                <span>Pendaftaran</span>
-                                <strong>Rp250.000</strong>
-                            </div>
-
-                            <div class="price-item">
-                                <span>Pendidikan Mandiri</span>
-                                <strong>Rp1.850.000</strong>
-                            </div>
-
-                            <div class="price-item">
-                                <span>SPP / Bulan</span>
-                                <strong>Rp100.000</strong>
-                            </div>
-
-                            <p>
-                                Usia <strong>24 tahun ke bawah</strong> GRATIS (S&K Berlaku)
-                            </p>
-
-                            <p>
-                                Usia <strong>24 tahun ke atas</strong> GRATIS bagi peserta
-                                yang tidak mampu
-                            </p>
-
-                        </div>
-
 
                         <a href="#" class="btn btn-primary btn-block">
                             Lihat Detail
@@ -305,34 +361,6 @@
                         </ul>
 
 
-                        <div class="course-price">
-
-                            <div class="price-item">
-                                <span>Pendaftaran</span>
-                                <strong>Rp250.000</strong>
-                            </div>
-
-                            <div class="price-item">
-                                <span>Pendidikan Mandiri</span>
-                                <strong>Rp2.250.000</strong>
-                            </div>
-
-                            <div class="price-item">
-                                <span>SPP / Bulan</span>
-                                <strong>Rp150.000</strong>
-                            </div>
-
-                            <p>
-                                Usia <strong>24 tahun ke bawah</strong> GRATIS (S&K Berlaku)
-                            </p>
-
-                            <p>
-                                Usia <strong>24 tahun ke atas</strong> GRATIS bagi peserta
-                                yang tidak mampu
-                            </p>
-
-                        </div>
-
 
                         <a href="#" class="btn btn-primary btn-block">
                             Lihat Detail
@@ -354,7 +382,7 @@
         <div class="container">
 
             <div class="section-title text-center">
-                <h2>Tenaga Pendidik <b>PKBM Aprila</b></h2>
+                <h2>Tenaga Pendidik / Tutor <b>PKBM Aprila</b></h2>
             </div>
 
             <div class="row">

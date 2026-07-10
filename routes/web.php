@@ -14,9 +14,12 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\InstructorController;
 use App\Http\Controllers\Frontend\KomentarBeritaController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Berita;
+use App\Models\Client;
 use App\Models\Course;
 use App\Models\Instructor;
 use App\Models\Jasa;
+use App\Models\Testimoni;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])
@@ -35,13 +38,18 @@ Route::get('/layanan-kami/pkbm-aprila', function () {
         ->get();
     return view('pages.frontend.pkbm-aprila', compact('instructors'));
 })->name('pkbm-aprila');
-Route::get('/layanan-kami/kelas-kursus-dan-jasa', function () {
-    $courses = Course::with('overview')->latest()->get();
-    $jasas = Jasa::where('is_active', true)
-        ->orderBy('urutan')
-        ->get();
-    return view('pages.frontend.kelas-kursus-dan-jasa', compact('courses','jasas'));
-})->name('kelas-kursus-dan-jasa');
+
+Route::get('/layanan-kami/lembaga-kursus', function () {
+    return view('pages.frontend.lembaga-kursus');
+})->name('lembaga-kursus');
+
+Route::get('/layanan-kami/lembaga-pelatihan-kerja', function () {
+    return view('pages.frontend.lembaga-pelatihan-kerja');
+})->name('lembaga-pelatihan-kerja');
+
+Route::get('/layanan-kami/production-house', function () {
+    return view('pages.frontend.production-house');
+})->name('production-house');
 
 Route::get('/kontak-kami', function () {
     return view('pages.frontend.kontak-kami');
@@ -54,6 +62,54 @@ Route::get('/detail-kursus', function () {
 Route::get('/detail-paket-a', function () {
     return view('pages.frontend.course.detail-paket-a');
 })->name('detail-paket-a');
+
+Route::get('/detail-paket-b', function () {
+    return view('pages.frontend.course.detail-paket-b');
+})->name('detail-paket-b');
+
+Route::get('/detail-paket-c', function () {
+    return view('pages.frontend.course.detail-paket-c');
+})->name('detail-paket-c');
+
+Route::get('/detail-aplikasi-perkantoran', function () {
+    return view('pages.frontend.course.detail-aplikasi-perkantoran');
+})->name('detail-aplikasi-perkantoran');
+
+Route::get('/detail-desain-grafis', function () {
+    return view('pages.frontend.course.detail-desain-grafis');
+})->name('detail-desain-grafis');
+
+Route::get('/detail-video-editing', function () {
+    return view('pages.frontend.course.detail-video-editing');
+})->name('detail-video-editing');
+
+Route::get('/detail-public-speaking', function () {
+    return view('pages.frontend.course.detail-public-speaking');
+})->name('detail-public-speaking');
+
+Route::get('/detail-digital-marketing', function () {
+    return view('pages.frontend.course.detail-digital-marketing');
+})->name('detail-digital-marketing');
+
+Route::get('/detail-public-speaking-kids', function () {
+    return view('pages.frontend.course.detail-public-speaking-kids');
+})->name('detail-public-speaking-kids');
+
+Route::get('/detail-kids-academy', function () {
+    return view('pages.frontend.course.detail-kids-academy');
+})->name('detail-kids-academy');
+
+Route::get('/detail-computer-kids', function () {
+    return view('pages.frontend.course.detail-computer-kids');
+})->name('detail-computer-kids');
+
+Route::get('/detail-english-kids', function () {
+    return view('pages.frontend.course.detail-english-kids');
+})->name('detail-english-kids');
+
+Route::get('/detail-bimbingan-belajar', function () {
+    return view('pages.frontend.course.detail-bimbingan-belajar');
+})->name('detail-bimbingan-belajar');
 
 Route::get('/berita', [FrontendBeritaController::class, 'index'])
     ->name('berita');
@@ -74,7 +130,16 @@ Route::get('/detail-berita', function () {
 })->name('detail-berita');
 
 Route::get('/dashboard', function () {
-    return view('pages.backend.dashboard');
+    $testimonialCount = Testimoni::count();
+    $instructorCount  = Instructor::count();
+    $clientCount      = Client::count();
+    $beritaCount      = Berita::count();
+    return view('pages.backend.dashboard', compact(
+        'testimonialCount',
+        'instructorCount',
+        'clientCount',
+        'beritaCount'
+    ));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
