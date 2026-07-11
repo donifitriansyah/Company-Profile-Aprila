@@ -41,7 +41,7 @@
 
                     <div class="sf_contact">
                         <i class="fa-solid fa-envelope"></i>
-                        <p>aprilaindonesia@gmail.com</p>
+                        <p>hello@aprila.id</p>
                     </div>
                     <div class="social_profile">
                         <ul>

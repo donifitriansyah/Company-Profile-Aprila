@@ -230,8 +230,8 @@
 
                         <ul class="contact-list">
                             <li>
-                                <a href="mailto:aprilaindonesia@gmail.com">
-                                    aprilaindonesia@gmail.com
+                                <a href="mailto:hello@aprila.id">
+                                    hello@aprila.id
                                 </a>
                             </li>
 
