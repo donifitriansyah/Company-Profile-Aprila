@@ -18,9 +18,37 @@ use App\Models\Berita;
 use App\Models\Client;
 use App\Models\Course;
 use App\Models\Instructor;
-use App\Models\Jasa;
 use App\Models\Testimoni;
 use Illuminate\Support\Facades\Route;
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
+
+Route::get('/sitemap.xml', function () {
+
+    $sitemap = Sitemap::create()
+        ->add(Url::create('/'))
+        ->add(Url::create('/tentang-kami'))
+        ->add(Url::create('/kontak-kami'))
+        ->add(Url::create('/layanan-kami/pkbm-aprila'))
+        ->add(Url::create('/layanan-kami/lembaga-kursus'))
+        ->add(Url::create('/layanan-kami/lembaga-pelatihan-kerja'))
+        ->add(Url::create('/layanan-kami/production-house'))
+        ->add(Url::create('/berita'));
+
+    foreach (Course::all() as $course) {
+        $sitemap->add(
+            Url::create('/course/' . $course->id)
+        );
+    }
+
+    foreach (Berita::all() as $berita) {
+        $sitemap->add(
+            Url::create('/berita/' . $berita->slug)
+        );
+    }
+
+    return $sitemap->toResponse(request());
+});
 
 Route::get('/', [HomeController::class, 'index'])
     ->name('welcome');
