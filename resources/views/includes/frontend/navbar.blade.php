@@ -25,6 +25,7 @@
                                 <li><a href="{{ route('lembaga-pelatihan-kerja') }}">Lembaga Pelatihan Kerja</a></li>
                                 <li><a href="https://klinikbisnis.aprila.id/">Klinik Bisnis </a></li>
                                 <li><a href="{{ route('production-house') }}"> Production House</a></li>
+                                <li><a href="{{ route('cek-sertifikat.validasi') }}"> Cek Sertifikat</a></li>
                                 {{-- <li><a href="course_details.html">Production House</a></li> --}}
                             </ul>
                         </li>
@@ -48,7 +49,9 @@
                         <li><a href="{{ route('lembaga-pelatihan-kerja') }}">Lembaga Pelatihan Kerja</a></li>
                         <li><a href="https://klinikbisnis.aprila.id/">Klinik Bisnis </a></li>
                         <li><a href="{{ route('production-house') }}"> Production House</a></li>
+                        <li><a href="{{ route('cek-sertifikat.validasi') }}"> Cek Sertifikat</a></li>
                         {{-- <li><a href="course_details.html">Production House</a></li> --}}
+
                     </ul>
                 </li>
 

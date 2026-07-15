@@ -5,8 +5,13 @@ use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\GaleriBeritaController;
 use App\Http\Controllers\Admin\JasaController;
 use App\Http\Controllers\Admin\KategoriBeritaController;
+use App\Http\Controllers\Admin\PesertaController;
 use App\Http\Controllers\Admin\PrestasiController;
+use App\Http\Controllers\Admin\ProgramPelatihanController;
+use App\Http\Controllers\Admin\ProgramPelatihanDetailController;
+use App\Http\Controllers\Admin\SertifikatController;
 use App\Http\Controllers\Admin\TestimoniController;
+use App\Http\Controllers\Admin\ValidasiSertifikat;
 use App\Http\Controllers\Frontend\CourseController;
 use App\Http\Controllers\Frontend\CourseDetailController;
 use App\Http\Controllers\Frontend\FrontendBeritaController;
@@ -171,6 +176,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -226,7 +232,82 @@ Route::middleware('auth')->group(function () {
     Route::resource('admin-testimoni', TestimoniController::class);
 
     Route::resource('admin-jasa', JasaController::class);
+
+    Route::resource('peserta', PesertaController::class);
+
+    Route::resource('program-pelatihan', ProgramPelatihanController::class);
+
+    Route::prefix('program-pelatihan')->group(function () {
+
+        Route::get(
+            '{program_pelatihan_id}/detail',
+            [ProgramPelatihanDetailController::class, 'index']
+        )
+            ->name('program-detail.index');
+
+
+        Route::post(
+            'detail',
+            [ProgramPelatihanDetailController::class, 'store']
+        )
+            ->name('program-detail.store');
+
+
+        Route::put(
+            'detail/{id}',
+            [ProgramPelatihanDetailController::class, 'update']
+        )
+            ->name('program-detail.update');
+
+
+        Route::delete(
+            'detail/{id}',
+            [ProgramPelatihanDetailController::class, 'destroy']
+        )
+            ->name('program-detail.destroy');
+    });
+
+    Route::resource('sertifikat', SertifikatController::class)
+        ->only([
+            'index',
+            'store',
+            'update',
+            'destroy'
+        ]);
+
+
+    Route::get(
+        '/sertifikat/{id}/generate',
+        [SertifikatController::class, 'generatePDF']
+    )
+        ->name('sertifikat.generate');
+
+
+    Route::get(
+        '/validasi-sertifikat/{uuid}',
+        [SertifikatController::class, 'validasi']
+    )
+        ->name('sertifikat.validasi');
+
+    Route::get(
+    '/sertifikat/{id}/view',
+    [SertifikatController::class, 'viewSertifikat']
+)->name('sertifikat.view');
+
+
 });
 
+Route::get(
+    '/validasi-sertifikat',
+    [ValidasiSertifikat::class,'validasi']
+)
+->name('cek-sertifikat.validasi');
+
+
+Route::post(
+    '/validasi-sertifikat',
+    [ValidasiSertifikat::class,'searchValidasi']
+)
+->name('cek-sertifikat.validasi.search');
 
 require __DIR__ . '/auth.php';

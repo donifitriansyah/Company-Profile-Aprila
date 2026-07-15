@@ -71,12 +71,24 @@
                         <span>Klien</span>
                     </a>
                 </li>
-                {{-- <li class="sidebar-item {{ request()->routeIs('admin-jasa.index') ? 'active' : '' }}">
-                    <a href="{{ route('admin-jasa.index') }}" class='sidebar-link'>
+                <li class="sidebar-item {{ request()->routeIs('peserta.index') ? 'active' : '' }}">
+                    <a href="{{ route('peserta.index') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
-                        <span>Jasa</span>
+                        <span>Peserta</span>
                     </a>
-                </li> --}}
+                </li>
+                <li class="sidebar-item {{ request()->routeIs('program-pelatihan.index') ? 'active' : '' }}">
+                    <a href="{{ route('program-pelatihan.index') }}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Program Pelatihan</span>
+                    </a>
+                </li>
+                <li class="sidebar-item {{ request()->routeIs('sertifikat.index') ? 'active' : '' }}">
+                    <a href="{{ route('sertifikat.index') }}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Sertifikat</span>
+                    </a>
+                </li>
 
 
                 <li class="sidebar-item">
