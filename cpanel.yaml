@@ -1,5 +1,0 @@
----
-deployment:
-tasks:
-- export DEPLOYPATH=/home/aprilaid/public_html/company_profile/git
-- /bin/cp -r * $DEPLOYPATH
