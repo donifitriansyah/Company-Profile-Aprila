@@ -283,16 +283,17 @@ Route::middleware('auth')->group(function () {
         ->name('sertifikat.generate');
 
 
-    Route::get(
-        '/validasi-sertifikat/{uuid}',
-        [SertifikatController::class, 'validasi']
-    )
-        ->name('sertifikat.validasi');
+
 
 
 
 
 });
+  Route::get(
+        '/validasi-sertifikat/{uuid}',
+        [SertifikatController::class, 'validasi']
+    )
+        ->name('sertifikat.validasi');
 Route::get(
     '/sertifikat/{id}/view',
     [SertifikatController::class, 'viewSertifikat']
