@@ -297,7 +297,7 @@ background-position:center;
 
                                     </code>
 
-                                    <hr>
+                                    {{-- <hr>
 
                                     <a href="{{ route('sertifikat.view', $sertifikat->id) }}" class="btn btn-primary mt-3"
                                         target="_blank">
@@ -305,7 +305,7 @@ background-position:center;
                                         <i class="bi bi-file-earmark-pdf"></i>
                                         Lihat Sertifikat
 
-                                    </a>
+                                    </a> --}}
 
 
 

@@ -281,34 +281,26 @@ Route::middleware('auth')->group(function () {
         [SertifikatController::class, 'generatePDF']
     )
         ->name('sertifikat.generate');
-
-
-
-
-
-
-
 });
-  Route::get(
-        '/validasi-sertifikat/{uuid}',
-        [SertifikatController::class, 'validasi']
-    )
-        ->name('sertifikat.validasi');
+Route::get(
+    '/validasi-sertifikat/{uuid}',
+    [SertifikatController::class, 'validasi']
+)
+    ->name('sertifikat.validasi');
 Route::get(
     '/sertifikat/{id}/view',
     [SertifikatController::class, 'viewSertifikat']
 )->name('sertifikat.view');
+
 Route::get(
     '/validasi-sertifikat',
-    [ValidasiSertifikat::class,'validasi']
-)
-->name('cek-sertifikat.validasi');
-
+    [ValidasiSertifikat::class, 'validasi']
+)->name('cek-sertifikat.validasi');
 
 Route::post(
     '/validasi-sertifikat',
-    [ValidasiSertifikat::class,'searchValidasi']
+    [ValidasiSertifikat::class, 'searchValidasi']
 )
-->name('cek-sertifikat.validasi.search');
+    ->name('cek-sertifikat.validasi.search');
 
 require __DIR__ . '/auth.php';
