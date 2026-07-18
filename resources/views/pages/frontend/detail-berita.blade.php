@@ -1,8 +1,18 @@
 @extends('layouts.frontend')
 
-@section('meta_description', $berita->meta_description ?? Str::limit(strip_tags($berita->ringkasan), 160))
+@section('title', $berita->judul)
+
+@section('og_title', $berita->judul)
+
+@section('meta_description', $berita->meta_description ?? Str::limit(strip_tags($berita->ringkasan ?: $berita->isi),
+    160))
 
 @section('meta_keywords', $berita->kategori->nama . ', Aprila Indonesia, Pelatihan, Pendidikan')
+
+@section('og_description', $berita->meta_description ?? Str::limit(strip_tags($berita->ringkasan ?: $berita->isi), 160))
+
+@section('og_image', $berita->thumbnail ? secure_asset('storage/' . $berita->thumbnail) :
+    secure_asset('frontend/assets/img/default-news.jpg'))
 
 @section('title', $berita->judul)
 

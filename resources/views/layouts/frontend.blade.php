@@ -10,6 +10,19 @@
     <meta name="description" content="@yield('meta_description', 'Yayasan Aprila Indonesia merupakan lembaga yang bergerak di bidang pendidikan, pelatihan, sertifikasi, pengembangan SDM, bisnis, dan teknologi.')">
 
     <meta name="keywords" content="@yield('meta_keywords', 'Aprila Indonesia, Yayasan Aprila Indonesia, Pelatihan, Sertifikasi, Pendidikan, Bimbingan Belajar, LPK Aprila')">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Aprila Indonesia">
+    <meta property="og:title" content="@yield('og_title', 'Aprila Indonesia')">
+    <meta property="og:description" content="@yield('og_description', 'Aprila Indonesia')">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="@yield('og_image', asset('frontend/assets/img/logo-aprila.jpg'))">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('og_title', 'Aprila Indonesia')">
+    <meta name="twitter:description" content="@yield('og_description', 'Aprila Indonesia')">
+    <meta name="twitter:image" content="@yield('og_image', asset('frontend/assets/img/logo-aprila.jpg'))">
     <title>@yield('title')</title>
     @include('includes.frontend.style')
 </head>
