@@ -1,5 +1,9 @@
 @extends('layouts.frontend')
 
+@section('meta_description', $berita->meta_description ?? Str::limit(strip_tags($berita->ringkasan), 160))
+
+@section('meta_keywords', $berita->kategori->nama . ', Aprila Indonesia, Pelatihan, Pendidikan')
+
 @section('title', $berita->judul)
 
 @section('content')
