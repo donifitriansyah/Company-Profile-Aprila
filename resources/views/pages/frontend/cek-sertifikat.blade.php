@@ -276,9 +276,6 @@ background-position:center;
 
                                     </div>
 
-
-
-
                                     <hr>
 
 

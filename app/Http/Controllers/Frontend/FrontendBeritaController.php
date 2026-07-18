@@ -46,14 +46,24 @@ class FrontendBeritaController extends Controller
             ->where('status', 'publish')
             ->firstOrFail();
 
+        // Tambah jumlah views
         $berita->increment('views');
 
+        // Berita Terbaru
         $beritaTerbaru = Berita::where('status', 'publish')
             ->where('id', '!=', $berita->id)
             ->latest('published_at')
             ->take(5)
             ->get();
 
+        // Berita Populer
+        $beritaPopuler = Berita::where('status', 'publish')
+            ->where('id', '!=', $berita->id)
+            ->orderByDesc('views')
+            ->take(5)
+            ->get();
+
+        // Kategori
         $kategori = KategoriBerita::withCount([
             'berita as total_berita' => function ($q) {
                 $q->where('status', 'publish');
@@ -65,6 +75,7 @@ class FrontendBeritaController extends Controller
         return view('pages.frontend.detail-berita', compact(
             'berita',
             'beritaTerbaru',
+            'beritaPopuler',
             'kategori'
         ));
     }

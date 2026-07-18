@@ -241,5 +241,59 @@
 
     </div>
 </div>
+<script>
+    document.getElementById('thumbnail').addEventListener('change', function(e) {
 
+        let reader = new FileReader();
+
+        reader.onload = function() {
+            document.getElementById('preview').src = reader.result;
+        }
+
+        reader.readAsDataURL(e.target.files[0]);
+
+    });
+
+
+    ClassicEditor
+        .create(document.querySelector('#editor'), {
+
+            placeholder: 'Tulis isi berita...',
+
+            toolbar: [
+                'heading',
+                '|',
+                'bold',
+                'italic',
+                'underline',
+                'strikethrough',
+                '|',
+                'bulletedList',
+                'numberedList',
+                '|',
+                'outdent',
+                'indent',
+                '|',
+                'link',
+                'blockQuote',
+                'insertTable',
+                '|',
+                'undo',
+                'redo'
+            ],
+
+            table: {
+                contentToolbar: [
+                    'tableColumn',
+                    'tableRow',
+                    'mergeTableCells'
+                ]
+            }
+
+        })
+        .catch(error => {
+            console.error(error);
+        });
+
+</script>
 @endsection
