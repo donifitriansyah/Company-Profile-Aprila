@@ -73,7 +73,6 @@ class SertifikatController extends Controller
      */
     public function store(Request $request)
     {
-
         $request->validate([
 
             'peserta_id' => [
@@ -97,15 +96,17 @@ class SertifikatController extends Controller
                 'date'
             ],
 
-            'kota_terbit' => [
-                'required',
-                'string',
-                'max:100'
+            'ttd' => [
+                'nullable',
+                'image',
+                'mimes:png,jpg,jpeg',
+                'max:2048'
             ],
 
-            'file_pdf' => [
+            'pas_foto' => [
                 'nullable',
-                'mimes:pdf',
+                'image',
+                'mimes:png,jpg,jpeg',
                 'max:2048'
             ],
 
@@ -114,7 +115,6 @@ class SertifikatController extends Controller
             ],
 
         ]);
-
 
 
         $data = [
@@ -130,27 +130,31 @@ class SertifikatController extends Controller
             'tanggal_terbit' =>
             $request->tanggal_terbit,
 
-            'kota_terbit' =>
-            $request->kota_terbit,
-
             'status' =>
             $request->status,
 
         ];
 
 
+        // Upload TTD
+        if ($request->hasFile('ttd')) {
 
-        if ($request->hasFile('file_pdf')) {
-
-            $data['file_pdf'] =
-                $request->file('file_pdf')
-                ->store('sertifikat', 'public');
+            $data['ttd'] =
+                $request->file('ttd')
+                ->store('sertifikat/ttd', 'public');
         }
 
 
+        // Upload Pas Foto
+        if ($request->hasFile('pas_foto')) {
+
+            $data['pas_foto'] =
+                $request->file('pas_foto')
+                ->store('sertifikat/pas-foto', 'public');
+        }
+
 
         Sertifikat::create($data);
-
 
 
         return redirect()
@@ -160,20 +164,9 @@ class SertifikatController extends Controller
                 'Sertifikat berhasil ditambahkan'
             );
     }
-
-
-
-
-
-    /**
-     * Update sertifikat
-     */
     public function update(Request $request, int $id)
     {
-
-        $sertifikat =
-            Sertifikat::findOrFail($id);
-
+        $sertifikat = Sertifikat::findOrFail($id);
 
 
         $request->validate([
@@ -190,17 +183,25 @@ class SertifikatController extends Controller
             'tanggal_terbit' =>
             'required|date',
 
-            'file_pdf' =>
-            'nullable|mimes:pdf|max:2048',
+
+            'ttd' => [
+                'nullable',
+                'image',
+                'mimes:png,jpg,jpeg',
+                'max:2048'
+            ],
+
+
+            'pas_foto' => [
+                'nullable',
+                'image',
+                'mimes:png,jpg,jpeg',
+                'max:2048'
+            ],
+
 
             'status' =>
             'required',
-
-            'kota_terbit' => [
-                'required',
-                'string',
-                'max:100'
-            ],
 
         ]);
 
@@ -220,9 +221,6 @@ class SertifikatController extends Controller
             'tanggal_terbit' =>
             $request->tanggal_terbit,
 
-            'kota_terbit' =>
-            $request->kota_terbit,
-
             'status' =>
             $request->status,
 
@@ -230,27 +228,47 @@ class SertifikatController extends Controller
 
 
 
-
-        if ($request->hasFile('file_pdf')) {
+        // Update TTD
+        if ($request->hasFile('ttd')) {
 
 
             if (
-                $sertifikat->file_pdf &&
+                $sertifikat->ttd &&
                 Storage::disk('public')
-                ->exists($sertifikat->file_pdf)
+                ->exists($sertifikat->ttd)
             ) {
 
                 Storage::disk('public')
-                    ->delete($sertifikat->file_pdf);
+                    ->delete($sertifikat->ttd);
             }
 
 
-
-            $data['file_pdf'] =
-                $request->file('file_pdf')
-                ->store('sertifikat', 'public');
+            $data['ttd'] =
+                $request->file('ttd')
+                ->store('sertifikat/ttd', 'public');
         }
 
+
+
+        // Update Pas Foto
+        if ($request->hasFile('pas_foto')) {
+
+
+            if (
+                $sertifikat->pas_foto &&
+                Storage::disk('public')
+                ->exists($sertifikat->pas_foto)
+            ) {
+
+                Storage::disk('public')
+                    ->delete($sertifikat->pas_foto);
+            }
+
+
+            $data['pas_foto'] =
+                $request->file('pas_foto')
+                ->store('sertifikat/pas-foto', 'public');
+        }
 
 
 
@@ -268,11 +286,6 @@ class SertifikatController extends Controller
 
 
 
-
-
-    /**
-     * Hapus sertifikat
-     */
     public function destroy(int $id)
     {
 

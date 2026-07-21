@@ -65,7 +65,7 @@
 
 
         <div class="qr">
-            {!! QrCode::size(100)->generate($url) !!}
+            {!! QrCode::size(80)->generate($url) !!}
         </div>
 
 
@@ -161,6 +161,26 @@
 
                 </tfoot>
 
+                {{-- PAS FOTO --}}
+                @if ($sertifikat->pas_foto)
+                    <div class="pas-foto">
+
+                        <img src="{{ asset('storage/' . $sertifikat->pas_foto) }}">
+
+                    </div>
+                @endif
+
+
+
+                {{-- TANDA TANGAN --}}
+                @if ($sertifikat->ttd)
+                    <div class="ttd">
+
+                        <img src="{{ asset('storage/' . $sertifikat->ttd) }}">
+
+                    </div>
+                @endif
+
 
 
             </table>
@@ -183,12 +203,74 @@
     /* =====================
    TAMPILAN NORMAL
 ===================== */
+    /* =====================
+   PAS FOTO BELAKANG
+===================== */
 
+    .pas-foto {
+
+        position: absolute;
+
+        top: 160mm;
+
+        right: 70mm;
+
+        width: 35mm;
+
+        height: 45mm;
+
+        overflow: hidden;
+
+    }
+
+
+    .pas-foto img {
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+
+    }
+
+
+
+    /* =====================
+   TANDA TANGAN
+===================== */
+
+    .ttd {
+
+        position: absolute;
+        top: 160mm;
+        right: 15mm;
+
+        width: 45mm;
+        height: 25mm;
+
+    }
+
+    .ttd {
+        background: none;
+    }
+
+
+    .ttd img {
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+
+        background: transparent;
+
+    }
 
     body {
-            user-select:none;
+        user-select: none;
 
-    -webkit-user-select:none;
+        -webkit-user-select: none;
         background: #f1f3f5;
 
     }
@@ -429,9 +511,6 @@
     }
 
 
-
-
-
     .qr {
 
 
@@ -441,22 +520,17 @@
         right: 15mm;
 
 
-        bottom: 28mm;
+        bottom: 40mm;
 
 
         background: white;
 
 
-        padding: 4mm;
+        padding: 2mm;
 
 
     }
 
-
-
-    /* =====================
-   BELAKANG TABLE
-===================== */
 
 
     .table-kompetensi {

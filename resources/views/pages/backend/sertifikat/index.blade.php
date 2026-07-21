@@ -220,7 +220,6 @@
 
     {{-- ================= MODAL TAMBAH ================= --}}
 
-
     <div class="modal fade" id="modalTambah">
 
 
@@ -363,12 +362,29 @@
                             <div class="col-md-6 mb-3">
 
                                 <label class="form-label">
-                                    Upload PDF (Opsional)
+                                    Tanda Tangan
                                 </label>
 
+                                <input type="file" name="ttd" class="form-control" accept="image/png,image/jpeg">
 
-                                <input type="file" name="file_pdf" class="form-control" accept="application/pdf">
+                                <small class="text-muted">
+                                    Format PNG/JPG maksimal 2MB
+                                </small>
 
+                            </div>
+
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label">
+                                    Pas Foto Peserta
+                                </label>
+
+                                <input type="file" name="pas_foto" class="form-control" accept="image/png,image/jpeg">
+
+                                <small class="text-muted">
+                                    Format PNG/JPG maksimal 2MB
+                                </small>
 
                             </div>
 
@@ -442,16 +458,7 @@
 
     </div>
 
-
-
-
-
-
-
-
-
     {{-- ================= MODAL EDIT ================= --}}
-
 
     @foreach ($sertifikats as $sertifikat)
         <div class="modal fade" id="modalEdit{{ $sertifikat->id }}">
@@ -596,26 +603,47 @@
 
                                 <div class="col-md-6 mb-3">
 
-
                                     <label class="form-label">
-                                        Ganti PDF
+                                        Ganti Tanda Tangan
                                     </label>
 
 
-                                    <input type="file" name="file_pdf" class="form-control" accept="application/pdf">
+                                    <input type="file" name="ttd" class="form-control"
+                                        accept="image/png,image/jpeg">
 
 
-                                    @if ($sertifikat->file_pdf)
-                                        <small>
-                                            File:
+                                    @if ($sertifikat->ttd)
+                                        <div class="mt-2">
 
-                                            <a href="{{ asset('storage/' . $sertifikat->file_pdf) }}" target="_blank">
+                                            <img src="{{ asset('storage/' . $sertifikat->ttd) }}" width="120"
+                                                class="border rounded">
 
-                                                Lihat PDF
+                                        </div>
+                                    @endif
 
-                                            </a>
 
-                                        </small>
+                                </div>
+
+
+
+                                <div class="col-md-6 mb-3">
+
+                                    <label class="form-label">
+                                        Ganti Pas Foto
+                                    </label>
+
+
+                                    <input type="file" name="pas_foto" class="form-control"
+                                        accept="image/png,image/jpeg">
+
+
+                                    @if ($sertifikat->pas_foto)
+                                        <div class="mt-2">
+
+                                            <img src="{{ asset('storage/' . $sertifikat->pas_foto) }}" width="120"
+                                                class="border rounded">
+
+                                        </div>
                                     @endif
 
 

@@ -16,8 +16,8 @@ class Sertifikat extends Model
         'nomor_sertifikat',
         'uuid',
         'tanggal_terbit',
-        'kota_terbit',
-        'file_pdf',
+        'ttd',
+        'pas_foto',
         'status',
     ];
 

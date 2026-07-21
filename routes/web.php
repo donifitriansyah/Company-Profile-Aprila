@@ -287,6 +287,7 @@ Route::get(
     [SertifikatController::class, 'validasi']
 )
     ->name('sertifikat.validasi');
+
 Route::get(
     '/sertifikat/{id}/view',
     [SertifikatController::class, 'viewSertifikat']
